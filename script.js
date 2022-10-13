@@ -166,7 +166,7 @@ Begin Questions
 // Content for the first Question 
 let question = [
 	{
-		qNum: 0,
+		id: 0,
 		headerQ: "Question 1",
 		content: "What is the answer to Question 1?",
 		op1: "Correct",
@@ -177,7 +177,7 @@ let question = [
 	},
 // Content for the second Question 
 	{
-		qNum: 1,
+		id: 1,
 		headerQ: "Question 2",
 		content: "What is the answer to Question 2?",
 		op1: "Wrong",
@@ -187,7 +187,7 @@ let question = [
 	},
 // Content for the third Question 
 	{
-		qNum: 2,
+		id: 2,
 		headerQ: "Question 3",
 		content: "What is the answer to Question 3?",
 		op1: "Wrong",
@@ -203,7 +203,7 @@ Pull Questions
 function pullQuestions() {
 
 // Sets content for the first question based on question.id
-if (question.qNum == 0) {
+if (question.id == 0) {
 
 	document.getElementById("headerQ").innerHTML = question[0].headerQ;
 	document.getElementById("content").innerHTML = question[0].content;
@@ -220,7 +220,7 @@ if (question.qNum == 0) {
 	}
 
 // Sets content for the second question based on question.id
-if (question.qNum == 1) {
+if (question.id == 1) {
 	document.getElementById("op1").className = "selectionFalse";
 	document.getElementById("op2").className = "selectionFalse";
 	document.getElementById("op3").className = "selectionFalse";
@@ -237,7 +237,7 @@ if (question.qNum == 1) {
 	}
 
 // Sets content for the third question based on question.id
-if (question.qNum == 2) {
+if (question.id == 2) {
 	document.getElementById("op1").className = "selectionFalse";
 	document.getElementById("op2").className = "selectionFalse";
 	document.getElementById("op3").className = "selectionFalse";
