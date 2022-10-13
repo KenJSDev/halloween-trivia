@@ -1,0 +1,235 @@
+/*************
+GLOBAL STYLES
+These styles will apply to elements on the main page
+**************/
+
+html {background-image: linear-gradient(#000, #000, #000, #802000, orange);
+}
+
+.main {width: 90%;
+	background-image: url("images/myershouse2.png");
+	background-repeat: no-repeat;
+	background-position: center; 
+	background-size: cover; 
+	border: solid 3px orange;
+	border-radius: 25px;
+	margin-left: auto;
+	margin-right: auto; 
+}
+
+.info {width: 90%;
+	background-color: #000;
+	border: solid 3px orange;
+	border-radius: 25px;
+	margin-left: auto;
+	margin-right: auto; 
+}
+
+
+h2 {color: orange;
+	text-align: center; 
+}
+
+h3 {color: orange;
+}
+
+.titletext {background-image: url("images/halloweentext.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 25%;
+	margin-right: auto;
+	margin-left: auto; 
+	width: 30%;
+}
+
+/*************
+START / REPLAY MENU STYLES
+**************/
+
+.startscreen {
+	width: 60%;
+	border: solid 2px orange;
+	border-radius: 10px;
+	margin-left: auto;
+	margin-right: auto; 
+	margin-top: 8%;
+	margin-bottom: 2%;
+	min-height: 50%;
+	background-image: url("images/startscreen.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.startscreenAnimated {
+	width: 60%;
+	border: solid 2px orange;
+	border-radius: 10px;
+	margin-left: auto;
+	margin-right: auto; 
+	margin-top: 8%;
+	margin-bottom: 2%;
+	min-height: 50%;
+	background-image: url("images/startscreen.gif");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.infoScreen {
+	width: 60%;
+	border: solid 2px orange;
+	border-radius: 10px;
+	margin-left: auto;
+	margin-right: auto; 
+	margin-top: 8%;
+	margin-bottom: 2%;
+	min-height: 50%;
+	background-color: #000;
+	color: #FFF;
+	padding: 15px;
+}
+
+.buttonarea {
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20%;
+	margin-bottom: auto;
+}
+
+
+.jackobutton {
+	background-image: url("images/jackobutton.png");
+	background-repeat: no-repeat; 
+	background-size: cover;
+	width: 225px;
+	height: 75px;
+	border: 2px solid orange;
+	border-radius: 10px;
+	font-size: 2em;
+	color: orange;
+	margin: 10px;
+}
+
+.jackobutton:hover {
+	background-image: url("images/jackobutton.gif");
+	background-repeat: no-repeat; 
+	background-size: cover;
+	border: 2px solid red;
+	color: red;
+}
+
+.endscreen {
+	width: 60%;
+	border: solid 2px orange;
+	border-radius: 10px;
+	margin-left: auto;
+	margin-right: auto; 
+	margin-top: 8%;
+	margin-bottom: 2%;
+	min-height: 50%;
+	background-image: url("images/endscreen.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.endscreenAnimated {
+	width: 60%;
+	border: solid 2px orange;
+	border-radius: 10px;
+	margin-left: auto;
+	margin-right: auto; 
+	margin-top: 8%;
+	margin-bottom: 2%;
+	min-height: 50%;
+	background-image: url("images/endscreen.gif");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.results {
+	color: orange;
+	font-size: 2em;
+	margin-top: 5%;
+	margin-bottom: 5%; 
+	margin-left: 5%;
+}
+
+/*************
+QUESTION AREA STYLES
+**************/
+		.answerarea {
+		width: 90%;
+		height: 50 px;
+		margin-top: 55px;
+		margin-right: auto;
+		margin-left: auto;
+		}
+
+		.answerarea table {width: 80%;
+		border-collapse: collapse;
+		color: white;
+		margin-left: auto;
+		margin-right: auto;
+		height: 30%;
+		}
+		
+		.answerarea td {width: 45%;
+		border-collapse: collapse;
+		margin-left: auto;
+		margin-right: auto;
+		height: 25%;
+		}
+		
+		.selectionFalse {
+		width: 100%;
+		background-image: linear-gradient(#802000, orange);
+		text-align: center;
+		font-size: 2em;
+		color: black;
+		height: 100%;
+		}
+
+		.selectionFalse:hover {
+		background-image: linear-gradient(#000, red);	
+		color: white;
+		}
+
+		.selectionTrue {
+		width: 100%;
+		background-image: linear-gradient(#000, green);
+		text-align: center;
+		font-size: 2em;
+		color: white;
+		height: 100%;
+		}
+		
+		.questionBox {width: 60%;
+		background-color: #000;
+		border: solid 2px orange;
+		border-radius: 10px;
+		margin-left: auto;
+		margin-right: auto; 
+		margin-top: 8%;
+		margin-bottom: 2%;
+		min-height: 50%;
+	}
+
+	.questionarea {
+		height: 50px;
+		color: #FFF;
+		width: 90%;
+		text-align: center;
+		margin-right: auto;
+		margin-left: auto;
+	}
+	
+	.submitA {
+		background-image: linear-gradient(#802000, orange);
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 200px;
+		height: 25px;
+		margin-top: 10px;
+		margin-bottom: 5px;
+		}
