@@ -1,8 +1,3 @@
-/*************
-GLOBAL STYLES
-These styles will apply to elements on the main page
-**************/
-
 html {background-image: linear-gradient(#000, #000, #000, #802000, orange);
 }
 
@@ -42,9 +37,7 @@ h3 {color: orange;
 	width: 30%;
 }
 
-/*************
-START / REPLAY MENU STYLES
-**************/
+/************* START / REPLAY MENU STYLES **************/
 
 .startscreen {
 	width: 60%;
@@ -229,6 +222,17 @@ QUESTION AREA STYLES
 		margin-left: auto;
 		margin-right: auto;
 		width: 200px;
+		height: 25px;
+		margin-top: 10px;
+		margin-bottom: 5px;
+		}
+
+	.nextQ {
+		background-image: linear-gradient(#802000, orange);
+		display: block;
+		margin-left: auto; 
+		margin-right: 5px;
+		width: 100px;
 		height: 25px;
 		margin-top: 10px;
 		margin-bottom: 5px;
