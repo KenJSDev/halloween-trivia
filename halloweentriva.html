@@ -1,6 +1,7 @@
 <html>
 
 	<head>
+		<title>Halloween Trivia</title>
 		<link rel="icon" type="image/x-icon" href="favicon.ico">
 		<link rel="stylesheet" href="styles.css">
 	</head>
@@ -9,9 +10,7 @@
 		<div class="titletext">
 		</div>
 
-	<!--
-		Start Menu
-	-->
+	<!-- Start Menu -->
 		<div id="startArea" class="startscreen" style="display: block;">
 			<div class="buttonarea">
 				<button class="jackobutton" id="startbutton" onclick="startGame()">Start</button>
@@ -23,21 +22,17 @@
 				<p sytle="text-align: center;">This application is a submission for a Halloween challenge by W3 Schools. 
 					This application is not intended for publication or moneitization. 
 				</p>
-				<h3>Version Information</h3>
-				<ul>Pre-Publish: Scoring System / Animation 
-					<li>Fix scoring system</li>
-					<li>Add actual Questions</li>
-					<li>Add a condition so that the beginning animation only plays 
-						the first time the start button is clicked</li> 
-					<li>Add music with option to toggle off/on</li>
+				<h3>Thank You</h3>
+				<ul> 
+					<li><a href="https://www.w3schools.com" target="_blank">W3 Schools</a> for hosting this challenge and their great learning resources</li>
+					<li><a href="https://www.webdevsimplified.com" target="_blank">Web Dev Simplified</a> for a great structure and community</li>
+					<li><a href="https://www.sololearn.com" target="_blank">SoloLearn</a> for helping me build a good foundation</li> 
+					<li>My friend <a href="https://github.com/ethqnit" target="_blank">Nate</a> for brainstorming functionality and giving recommendations</li>
 				</ul>
 				<button onclick="closeInfo()">Back</button>	
 		</div>
 
-	<!-- 
-		Question Selection
-	-->
-		
+	<!-- Question Selection -->
 		<div id="gameArea" class="questionbox" style="display: none;">
 		
 			<div class="questionarea">
@@ -47,23 +42,21 @@
 			
 			<div class="answerarea">
 				<table>
-					<tr><td><div id="op1" class="selectionFalse" onclick="select1()">Option 1</div></td>
-						<td><div id="op2" class="selectionFalse" onclick="select2()">Option 2</div></td>
+					<tr><td><button id="op1" class="selectionFalse" onclick="select1()">Option 1</button></td>
+						<td><button id="op2" class="selectionFalse" onclick="select2()">Option 2</button></td>
 					</tr>
-					<tr><td><div id="op3" class="selectionFalse" onclick="select3()">Option 3</div></td>
-						<td><div id="op4" class="selectionFalse" onclick="select4()">Option 4</div></td>
+					<tr><td><button id="op3" class="selectionFalse" onclick="select3()">Option 3</button></td>
+						<td><button id="op4" class="selectionFalse" onclick="select4()">Option 4</button></td>
 					</tr>
 				</table>
 		</div>
 			
 			<button id="submitA" class="submitA" onClick="submitA()">Submit</button>
+			<button id="nextQ" class="nextQ" onClick="nextQ()">Next</button>
 						
 		</div>
 		
-	<!--
-		End Screen
-	-->
-		
+	<!-- End Screen -->
 		<div id="endArea" class="endscreenAnimated" style="display: none;">
 		
 			<h2>Results</h2>
