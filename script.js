@@ -27,28 +27,22 @@ function closeInfo()
 /**************** Start Game *****************/
 
 function startGame() {
+	animation++;
 
 	// Change .png background to .gif to start animation / Hide Buttons
 	// If the animation has already played during the session, do not play if user opts to play again
-	if (animation > 0); {
+	if (animation = 0) {
 	startArea.className = "startscreenAnimated";
 	setTimeout(function() { gameArea.style.display = "block"}, 10000);
 	setTimeout(function() { startArea.style.display = "none"}, 10000);
 	}
 
+	else {
+	document.getElementById("startArea").style.display = "none";
+	document.getElementById("gameArea").style.display = "block";
 	document.getElementById("startbutton").style.display = "none";
 	document.getElementById("infobutton").style.display = "none";
-
-	// Set question.id and correct to 0 to ensure that the score is reset
-	question.id = 0;
-	correct = 0;
-
-	// Pulls the first question to start the game
-	nextQ();
-
-	// Console information for debugging 
-	console.log("startGame() ", "Scoring System Logging: ", question.id, correct);
-}
+	}
 
 /****************
 Reset Game 
