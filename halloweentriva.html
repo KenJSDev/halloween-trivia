@@ -4,19 +4,19 @@
 		<title>Halloween Trivia</title>
 		<link rel="icon" type="image/x-icon" href="favicon.ico">
 		<link rel="stylesheet" href="styles.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	
 	<body class="main">
-		<div class="titletext">
-		</div>
+		<div class="titletext"></div>
 
 	<!-- Start Menu -->
-		<div id="startArea" class="startscreen" style="display: block;">
-			<div class="buttonarea">
-				<button class="jackobutton" id="startbutton" onclick="startGame()">Start</button>
-				<button class="jackobutton" id="infobutton" onclick="clickInfo()">Info</button>
-			</div>
+		<div id="startArea" class="startscreen" style="display: grid;">
+			<button class="jackobutton" id="startbutton" onclick="startGame()">Start</button>
+			<button class="jackobutton" id="infobutton" onclick="clickInfo()">Info</button>
 		</div>
+	
+	<!-- Info Area -->
 		<div id="infoArea" class="infoScreen" style="display: none;">
 				<h2>Halloween Trivia</h2>
 				<p sytle="text-align: center;">This application is a submission for a Halloween challenge by W3 Schools. 
@@ -41,15 +41,11 @@
 			</div>
 			
 			<div class="answerarea">
-				<table>
-					<tr><td><button id="op1" class="selectionFalse" onclick="select1()">Option 1</button></td>
-						<td><button id="op2" class="selectionFalse" onclick="select2()">Option 2</button></td>
-					</tr>
-					<tr><td><button id="op3" class="selectionFalse" onclick="select3()">Option 3</button></td>
-						<td><button id="op4" class="selectionFalse" onclick="select4()">Option 4</button></td>
-					</tr>
-				</table>
-		</div>
+				<button id="op1" class="selectionFalse" onclick="select1()">Option 1</button>
+				<button id="op2" class="selectionFalse" onclick="select2()">Option 2</button>
+				<button id="op3" class="selectionFalse" onclick="select3()">Option 3</button>
+				<button id="op4" class="selectionFalse" onclick="select4()">Option 4</button>
+			</div>
 			
 			<button id="submitA" class="submitA" onClick="submitA()">Submit</button>
 			<button id="nextQ" class="nextQ" onClick="nextQ()">Next</button>
@@ -66,7 +62,7 @@
 				<div id ="incorrectNum"></div>
 			</div>
 			
-			<div style="margin-left: auto; margin-right: auto; width: 30%;">
+			<div style="margin-left: auto; margin-right: auto; width: 30%; margin-top: 10%;">
 				<button class="jackobutton" onclick="resetGame()">Reset Game?</button>
 			</div>
 		
