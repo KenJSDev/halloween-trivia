@@ -17,7 +17,7 @@ function clickInfo ()
 
 function closeInfo() 
 {
-	document.getElementById("startArea").style.display = "block";
+	document.getElementById("startArea").style.display = "grid";
 	document.getElementById("infoArea").style.display = "none";
 
 	console.log("Back Button: Clicked");
@@ -25,16 +25,16 @@ function closeInfo()
 }
 
 /**************** Start Game *****************/
-
 function startGame() {
-	animation++;
 
 	// Change .png background to .gif to start animation / Hide Buttons
 	// If the animation has already played during the session, do not play if user opts to play again
-	if (animation = 0) {
+	if (animation == 0) {
 	startArea.className = "startscreenAnimated";
 	setTimeout(function() { gameArea.style.display = "block"}, 10000);
 	setTimeout(function() { startArea.style.display = "none"}, 10000);
+	document.getElementById("startbutton").style.display = "none";
+	document.getElementById("infobutton").style.display = "none";
 	}
 
 	else {
@@ -44,10 +44,22 @@ function startGame() {
 	document.getElementById("infobutton").style.display = "none";
 	}
 
+	// Set question.id and correct to 0 to ensure that the score is reset
+	question.id = 0;
+	correct = 0;
+
+	// Pulls the first question to start the game
+	nextQ();
+
+	// Console information for debugging 
+	console.log("startGame() ", "Scoring System Logging: ", question.id, correct, animation);
+}
+
 /****************
 Reset Game 
 *****************/
 function resetGame() {
+	animation++;
 
 	// Reset score so that the new game begins at 0
 	question.id = 0;
@@ -61,9 +73,9 @@ function resetGame() {
 
 	// Hide the endArea
 	startArea.className = "startscreen";
-	document.getElementById("startbutton").style.display = "inline";
-	document.getElementById("infobutton").style.display = "inline";
-	document.getElementById("startArea").style.display = "block";
+	document.getElementById("startbutton").style.display = "block";
+	document.getElementById("infobutton").style.display = "block";
+	document.getElementById("startArea").style.display = "grid";
 	document.getElementById("endArea").style.display = "none";
 		
 	console.log("resetGame()", "Scoring System Logging: ", question.id,  correct);
@@ -241,7 +253,7 @@ let question = [
 	{
 		id: 8,
 		headerQ: "Question 8",
-		content: "What weapon did Jamie Lloyd use when she attacked her step-mother?",
+		content: "What weapon did Jamie Lloyd use when she attacked her foster mom?",
 		op1: "Scissors", // correct
 		op2: "A scalpel",
 		op3: "A kitchen knife",
@@ -443,10 +455,10 @@ if (question.id == 10) {
 // Populates the endArea screen which displays stats and an option to replay
 if (question.id == 11) {
 	document.getElementById("gameArea").style.display = "none";
-	document.getElementById("endArea").style.display = "block";
+	document.getElementById("endArea").style.display = "grid";
 
 	// Timeout to change class so png shows instead of gif (stopping animation)
-	setTimeout(function() {endArea.className = "endscreen"}, 9000);
+	setTimeout(function() {endArea.className = "endscreen"}, 11500);
 
 	document.getElementById("correctNum").innerHTML = ("Correct: " + correct);
 	}	
@@ -466,42 +478,218 @@ function submitA() {
 
 	if (question.id == 1 && selected3 == true) {
 		correct++;
+		document.getElementById("headerQ").innerHTML = "Correct"
+		document.getElementById("content").innerHTML = "Michael Myers was born on October 19th, 1957."
+	}
+
+	if (question.id == 1 && selected1 == true) {
+		document.getElementById("headerQ").innerHTML = "Wrong"
+		document.getElementById("content").innerHTML = "October 31st, 1978 was the day that Michael stalked Laurie Strode and killed her friends"
+	}
+
+	if (question.id == 1 && selected2 == true) {
+		document.getElementById("headerQ").innerHTML = "Wrong"
+		document.getElementById("content").innerHTML = "October 31st, 1963 is the day that Michael killed Judith"
+	}
+
+	if (question.id == 1 && selected4 == true) {
+		document.getElementById("headerQ").innerHTML = "Wrong"
+		document.getElementById("content").innerHTML = "Michael was born on October 19th, but not in 1963"
 	}
 
 	if (question.id == 2 && selected1 == true) {
 		correct++;
+		document.getElementById("headerQ").innerHTML = "Correct"
+		document.getElementById("content").innerHTML = "Lindsay has survived Halloween 1978, Halloween Kills, Halloween Ends, and had a brief appearance in Halloween 4";
+	}
+
+	if (question.id == 2 && selected2 == true) {
+		document.getElementById("headerQ").innerHTML = "Wrong"
+		document.getElementById("content").innerHTML = "Laurie is killed by Michael in Halloween Resurrection. She also dies off screen between Halloween II and Halloweeen 4";
+	}
+
+	if (question.id == 2 && selected3 == true) {
+		document.getElementById("headerQ").innerHTML = "Wrong"
+		document.getElementById("content").innerHTML = "Tommy was killed in Halloween Kills by Michael Myers";
+	}
+
+	if (question.id == 2 && selected4 == true) {
+		document.getElementById("headerQ").innerHTML = "Wrong"
+		document.getElementById("content").innerHTML = "Doctor Loomis was killed by Michael in Rob Zombie's Halloween. Then again in Rob Zombie's Halloween II. It shouldn't count but it does";
 	}
 
 	if (question.id == 3 && selected4 == true) {
 		correct++;
+		document.getElementById("headerQ").innerHTML = "Correct"
+		document.getElementById("content").innerHTML = "Laurie confesses to Annie that she would rather go to the Halloween Dance with Ben Tramer. Hawkins confirms Laurie's crush in Halloween Kills";
+	}
+
+	if (question.id == 3 && selected1 == true) {
+		document.getElementById("headerQ").innerHTML = "Wrong"
+		document.getElementById("content").innerHTML = "Devon Graham is who Annie thinks is driving the Smith's Grove car when she makes her 'Speed Kills' comment. 'Devon' has a call center in Halloween Ends and is likely the same Devon.";
+	}
+
+	if (question.id == 3 && selected2 == true) {
+		document.getElementById("headerQ").innerHTML = "Wrong"
+		document.getElementById("content").innerHTML = "Ted Hollister is the man who was accidentally killed by the mob in Halloween 4";
+	}
+
+	if (question.id == 3 && selected3 == true) {
+		document.getElementById("headerQ").innerHTML = "Wrong"
+		document.getElementById("content").innerHTML = "Jimmy was introduced in Halloween II and there seemed to be a slight romantic interest, but was not mentioned in the first film";
 	}
 
 	if (question.id == 4 && selected2 == true) {
 		correct++;
+		document.getElementById("headerQ").innerHTML = "Correct"
+		document.getElementById("content").innerHTML = "Michael killed the tow truck driver on his way back to Haddonfield. Judith was his first victim.";
+	}
+
+	if (question.id == 4 && selected1 == true) {
+		document.getElementById("headerQ").innerHTML = "Wrong"
+		document.getElementById("content").innerHTML = "Annie is Michael's third victim";
+	}
+
+	if (question.id == 4 && selected3 == true) {
+		document.getElementById("headerQ").innerHTML = "Wrong"
+		document.getElementById("content").innerHTML = "Bob is Michael's fourth victim";
+	}
+
+	if (question.id == 4 && selected4 == true) {
+		document.getElementById("headerQ").innerHTML = "Wrong"
+		document.getElementById("content").innerHTML = "Linda is Michael's fifth victim";
 	}
 
 	if (question.id == 5 && selected4 == true) {
 		correct++;
+		document.getElementById("headerQ").innerHTML = "Correct"
+		document.getElementById("content").innerHTML = "Michael's middle name 'Audrey' was first confirmed in a scene added to the first movie. In 2018, his middle initial solidifies this point";
+	}
+
+	if (question.id == 5 && selected1 == true) {
+		document.getElementById("headerQ").innerHTML = "Wrong"
+		document.getElementById("content").innerHTML = "Nicole is probably the most common middle name for women in the history of history along with Marie. But it's not Michael's middle name";
+	}
+
+	if (question.id == 5 && selected2 == true) {
+		document.getElementById("headerQ").innerHTML = "Wrong"
+		document.getElementById("content").innerHTML = "Michael Michael Myers sounds cool, but it's not his name";
+	}
+
+	if (question.id == 5 && selected3 == true) {
+		document.getElementById("headerQ").innerHTML = "Wrong"
+		document.getElementById("content").innerHTML = "James is a great guess, but it's still wrong.";
 	}
 
 	if (question.id == 6 && selected1 == true) {
 		correct++;
+		document.getElementById("headerQ").innerHTML = "Correct"
+		document.getElementById("content").innerHTML = "Dr. Wynn was the one who Dr. Loomis confronted stating that Michael was on his way back to Haddonfield. 'Well he was doing very well last night! Maybe somebody around here gave him lessons'";
+	}
+
+	if (question.id == 6 && selected2 == true) {
+		document.getElementById("headerQ").innerHTML = "Wrong"
+		document.getElementById("content").innerHTML = "Dr. Wynn did not appear in Halloween II";
+	}
+
+	if (question.id == 6 && selected3 == true) {
+		document.getElementById("headerQ").innerHTML = "Wrong"
+		document.getElementById("content").innerHTML = "While Halloween 4 is considered the first movie in the 'Thorn Trilogy,' the 'Man in Black' concept wasn't introduced until Halloween 5";
+	}
+
+	if (question.id == 6 && selected4 == true) {
+		document.getElementById("headerQ").innerHTML = "Wrong"
+		document.getElementById("content").innerHTML = "Halloween 6 revealed that Dr. Wynn is the 'Man in Black,' but this was not Dr. Wynn's first appearance";
 	}
 
 	if (question.id == 7 && selected2 == true) {
 		correct++;
+		document.getElementById("headerQ").innerHTML = "Correct"
+		document.getElementById("content").innerHTML = "Mrs. Blankenship debuts in Halloween 6 and owns the property that Tommy Doyle is renting. She is later revealed to be involved with the Thorn Cult";
+	}
+
+	if (question.id == 7 && selected1 == true) {
+		document.getElementById("headerQ").innerHTML = "Wrong"
+		document.getElementById("content").innerHTML = "Mrs. Ellrod debtus in Halloween II at the beginning of the film. Michael steals a knife from her counter top. She is referenced in Halloween 2018";
+	}
+
+	if (question.id == 7 && selected3 == true) {
+		document.getElementById("headerQ").innerHTML = "Wrong"
+		document.getElementById("content").innerHTML = "Dr. Mathis is mentioned in Halloween II and Halloween Kills. He is killed by Corey Cunningham in Halloween Ends";
+	}
+
+	if (question.id == 7 && selected4 == true) {
+		document.getElementById("headerQ").innerHTML = "Wrong"
+		document.getElementById("content").innerHTML = "Dr. Loomis is not aware of the Thorn curse until Tommy Doyle brings it to his attention in Halloween 6";
 	}
 
 	if (question.id == 8 && selected1 == true) {
 		correct++;
+		document.getElementById("headerQ").innerHTML = "Correct"
+		document.getElementById("content").innerHTML = "Jamie grabs a pair of scissors off of a counter top as her foster mom is drawing a bath";
+	}
+
+	if (question.id == 8 && selected2 == true) {
+		document.getElementById("headerQ").innerHTML = "Wrong"
+		document.getElementById("content").innerHTML = "Micahel uses a scalpel in Halloween II, but this is not the same weapon Jamie uses";
+	}
+
+	if (question.id == 8 && selected3 == true) {
+		document.getElementById("headerQ").innerHTML = "Wrong"
+		document.getElementById("content").innerHTML = "Kitchen knives are synonymous with Halloween, but Jamie did not use one when she attacked her foster mom";
+	}
+
+	if (question.id == 8 && selected4 == true) {
+		document.getElementById("headerQ").innerHTML = "Wrong"
+		document.getElementById("content").innerHTML = "Jamie did not use a carpet knife. She just didn't. That's all";
 	}
 
 	if (question.id == 9 && selected2 == true) {
 		correct++;
+		document.getElementById("headerQ").innerHTML = "Correct"
+		document.getElementById("content").innerHTML = "Halloween H20 opens in Langon, Illnois and the rest of the movie takes place in California";
+	}
+
+	if (question.id == 9 && selected1 == true) {
+		correct++;
+		document.getElementById("headerQ").innerHTML = "Wrong"
+		document.getElementById("content").innerHTML = "Halloween Ends is almost entirely based in Haddonfield";
+	}
+
+	if (question.id == 9 && selected3 == true) {
+		correct++;
+		document.getElementById("headerQ").innerHTML = "Wrong"
+		document.getElementById("content").innerHTML = "Rob Zombie's Halloween II does take place in Haddonfield. Let's move on...";
+	}
+
+	if (question.id == 9 && selected4 == true) {
+		correct++;
+		document.getElementById("headerQ").innerHTML = "Wrong"
+		document.getElementById("content").innerHTML = "Halloween III does not take place in Haddonfield, but Myers is a fictional character in this film";
 	}
 
 	if (question.id == 10 && selected2 == true) {
 		correct++;
+		document.getElementById("headerQ").innerHTML = "Correct"
+		document.getElementById("content").innerHTML = "Halloween H20 includes multiple masks, ranging from the Halloween 6 mask to a digital mask used to cover the original mask seen in early trailers";
+	}
+
+	if (question.id == 10 && selected1 == true) {
+		correct++;
+		document.getElementById("headerQ").innerHTML = "Wrong"
+		document.getElementById("content").innerHTML = "Halloween III did include multiple masks, but outside of a trailer on a TV none of them are the Myers mask";
+	}
+
+	if (question.id == 10 && selected3 == true) {
+		correct++;
+		document.getElementById("headerQ").innerHTML = "Wrong"
+		document.getElementById("content").innerHTML = "Despite multiple versions and a convoluted plot, one consisteny in Halloween 6 is the mask";
+	}
+
+	if (question.id == 10 && selected4 == true) {
+		correct++;
+		document.getElementById("headerQ").innerHTML = "Wrong"
+		document.getElementById("content").innerHTML = "Michael's mask was burned in Halloween 2018, but Michael keeps it for the duration of Halloween Kills";
 	}
 
 	console.log("submitA Function Called", "question.id: ", question.id, 
