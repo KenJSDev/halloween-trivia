@@ -28,6 +28,14 @@ h2 {color: orange;
 h3 {color: orange;
 }
 
+a {text-decoration: none;
+	color: orange;
+}
+
+a:visited {text-decoration: none;
+	color: orange;
+}
+
 .titletext {background-image: url("images/halloweentext.png");
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -37,7 +45,7 @@ h3 {color: orange;
 	width: 30%;
 }
 
-/************* START / REPLAY MENU STYLES **************/
+/************* START / REPLAY MENU **************/
 
 .startscreen {
 	width: 60%;
@@ -81,6 +89,9 @@ h3 {color: orange;
 	background-color: #000;
 	color: #FFF;
 	padding: 15px;
+	overflow: auto;
+	min-height: 50%;
+	max-height: 50%;
 }
 
 .jackobutton {
@@ -108,7 +119,7 @@ h3 {color: orange;
 	color: red;
 }
 
-.endscreen {
+.goodEnd {
 	width: 60%;
 	border: solid 2px orange;
 	border-radius: 10px;
@@ -117,12 +128,13 @@ h3 {color: orange;
 	margin-top: 8%;
 	margin-bottom: 2%;
 	min-height: 50%;
+	max-height: 50%;
 	background-image: url("images/endscreen.png");
 	background-size: cover;
 	background-repeat: no-repeat;
 }
 
-.endscreenAnimated {
+.goodEndAnimated {
 	width: 60%;
 	border: solid 2px orange;
 	border-radius: 10px;
@@ -131,7 +143,38 @@ h3 {color: orange;
 	margin-top: 8%;
 	margin-bottom: 2%;
 	min-height: 50%;
+	max-height: 50%;
 	background-image: url("images/endscreen.gif");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.badEnd {
+	width: 60%;
+	border: solid 2px orange;
+	border-radius: 10px;
+	margin-left: auto;
+	margin-right: auto; 
+	margin-top: 8%;
+	margin-bottom: 2%;
+	min-height: 50%;
+	max-height: 50%;
+	background-image: url("images/badendscreen.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.badEndAnimated {
+	width: 60%;
+	border: solid 2px orange;
+	border-radius: 10px;
+	margin-left: auto;
+	margin-right: auto; 
+	margin-top: 8%;
+	margin-bottom: 2%;
+	min-height: 50%;
+	max-height: 50%;
+	background-image: url("images/badendscreen.gif");
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -144,99 +187,107 @@ h3 {color: orange;
 	margin-left: 5%;
 }
 
-/*************
-QUESTION AREA STYLES
-**************/
-		.answerarea {
-		width: 90%;
-		height: 50 px;
-		margin-top: 55px;
-		margin-right: auto;
-		margin-left: auto;
-		display: grid;
-		grid-template-columns: auto auto;
-		}
-
-		.answerarea table {width: 80%;
-		border-collapse: collapse;
-		color: white;
-		margin-left: auto;
-		margin-right: auto;
-		height: 30%;
-		}
-		
-		.answerarea td {width: 40%;
-		border-collapse: collapse;
-		margin-left: auto;
-		margin-right: auto;
-		height: 25%;
-		}
-		
-		.selectionFalse {
-		width: 100%;
-		background-image: linear-gradient(#802000, orange);
-		text-align: center;
-		font-size: 2em;
-		color: black;
-		height: 100%;
-		}
-
-		.selectionFalse:hover {
-		background-image: linear-gradient(#000, red);	
-		color: white;
-		}
-
-		.selectionTrue {
-		width: 100%;
-		background-image: linear-gradient(#000, green);
-		text-align: center;
-		font-size: 2em;
-		color: white;
-		height: 100%;
-		}
-		
-		.questionBox {width: 60%;
-		background-color: #000;
-		border: solid 2px orange;
-		border-radius: 10px;
-		margin-left: auto;
-		margin-right: auto; 
-		margin-top: 8%;
-		margin-bottom: 2%;
-		min-height: 50%;
+/************* QUESTION AREA **************/
+	.answerarea {
+	width: 90%;
+	height: 50 px;
+	margin-top: 55px;
+	margin-right: auto;
+	margin-left: auto;
+	display: grid;
+	grid-template-columns: auto auto;
 	}
 
-	.questionarea {
-		height: 50px;
-		color: #FFF;
-		width: 90%;
-		text-align: center;
-		margin-right: auto;
-		margin-left: auto;
+	.answerarea table {width: 80%;
+	border-collapse: collapse;
+	color: white;
+	margin-left: auto;
+	margin-right: auto;
+	height: 30%;
 	}
 	
-	.submitA {
-		background-image: linear-gradient(#802000, orange);
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-		width: 200px;
-		height: 25px;
-		margin-top: 10px;
-		margin-bottom: 5px;
-		}
+	.answerarea td {width: 40%;
+	border-collapse: collapse;
+	margin-left: auto;
+	margin-right: auto;
+	height: 25%;
+	}
+	
+	.selectionFalse {
+	width: 100%;
+	background-image: linear-gradient(#802000, orange);
+	text-align: center;
+	font-size: 1.5em;
+	color: black;
+	height: 100%;
+	}
 
-	.nextQ {
-		background-image: linear-gradient(#802000, orange);
-		display: block;
-		margin-left: auto; 
-		margin-right: 5px;
-		width: 100px;
-		height: 25px;
-		margin-top: 10px;
-		margin-bottom: 5px;
-		}
+	.selectionFalse:hover {
+	background-image: linear-gradient(#802000, orange);	
+	color: white;
+	}
 
+	.selectionTrue {
+	width: 100%;
+	background-image: linear-gradient(#000, green);
+	text-align: center;
+	font-size: 1.5em;
+	color: white;
+	height: 100%;
+	}
+
+	.selectionWrong {
+	width: 100%;
+	background-image: linear-gradient(#000, red);
+	text-align: center;
+	font-size: 1.5em;
+	color: white;
+	height: 100%;
+	}
+	
+	.questionBox {width: 60%;
+	background-color: #000;
+	border: solid 2px orange;
+	border-radius: 10px;
+	margin-left: auto;
+	margin-right: auto; 
+	margin-top: 8%;
+	margin-bottom: 2%;
+	min-height: 50%;
+}
+
+.questionarea {
+	height: 50px;
+	color: #FFF;
+	width: 90%;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.submitA {
+	background-image: linear-gradient(#802000, orange);
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 200px;
+	height: 25px;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	}
+
+.nextQ {
+	background-image: linear-gradient(#802000, orange);
+	display: block;
+	margin-left: auto; 
+	margin-right: 5px;
+	width: 100px;
+	height: 25px;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	}
+
+/************* Styles for Mobile **************/
 @media screen and (max-width: 900px) {
 	.startscreen {
 		width: 60%;
@@ -256,61 +307,61 @@ QUESTION AREA STYLES
 		align-content: center;
 	}
 
-		.jackobutton {
-			background-image: url("images/jackobutton.png");
-			background-repeat: no-repeat; 
-			background-size: cover;
-			width: 150px;
-			height: 50px;
-			border: 2px solid orange; 
-			border-radius: 10px;
-			font-size: 1em;
-			color: orange;
-			margin-left: auto;
-			margin-right: auto;
-			display: block;
-			margin-top: 5%;
-			margin-bottom: 5%;
-		}
+	.jackobutton {
+		background-image: url("images/jackobutton.png");
+		background-repeat: no-repeat; 
+		background-size: cover;
+		width: 150px;
+		height: 50px;
+		border: 2px solid orange; 
+		border-radius: 10px;
+		font-size: 1em;
+		color: orange;
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+		margin-top: 5%;
+		margin-bottom: 5%;
+	}
 
-		.endscreenAnimated {
-			width: 60%;
-			border: solid 2px orange;
-			border-radius: 10px;
-			margin-left: auto;
-			margin-right: auto; 
-			margin-top: 8%;
-			margin-bottom: 2%;
-			min-height: 50%;
-			background-image: url("images/endscreen.gif");
-			background-size: cover;
-			background-repeat: no-repeat;
-			background-position: center; 
-		} 
-
-		.endscreen {
-			width: 60%;
-			border: solid 2px orange;
-			border-radius: 10px;
-			margin-left: auto;
-			margin-right: auto; 
-			margin-top: 8%;
-			margin-bottom: 2%;
-			min-height: 50%;
-			background-image: url("images/endscreen.png");
-			background-size: cover;
-			background-repeat: no-repeat;
-			background-position: center;
-		}
-	
-		.answerarea {
-			width: 90%;
-			height: 50 px;
-			margin-top: 55px;
-			margin-right: auto;
-			margin-left: auto;
-			display: grid;
-			grid-template-columns: auto;
-			}
-
+	.endscreenAnimated {
+		width: 60%;
+		border: solid 2px orange;
+		border-radius: 10px;
+		margin-left: auto;
+		margin-right: auto; 
+		margin-top: 8%;
+		margin-bottom: 2%;
+		min-height: 50%;
+		background-image: url("images/endscreen.gif");
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center; 
 	} 
+
+	.endscreen {
+		width: 60%;
+		border: solid 2px orange;
+		border-radius: 10px;
+		margin-left: auto;
+		margin-right: auto; 
+		margin-top: 8%;
+		margin-bottom: 2%;
+		min-height: 50%;
+		background-image: url("images/endscreen.png");
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+	.answerarea {
+		width: 90%;
+		height: 50 px;
+		margin-top: 55px;
+		margin-right: auto;
+		margin-left: auto;
+		display: grid;
+		grid-template-columns: auto;
+		}
+
+} 
