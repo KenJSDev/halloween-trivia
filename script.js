@@ -4,8 +4,107 @@ var selected1 = false;
 var selected2 = false; 
 var selected3 = false;
 var selected4 = false; 
+var endMusicG = 0;
+var endMusicB = 0;
+var goodEnding = 0;
+var badEnding = 0;
+
+/**************** Sound Functions *****************/
+// These functions will be called by other functions which will
+// play music at certain parts of the game. Different sounds will
+// play when the user submits an answer depending on whether or not
+// it is correct
+function playMusic() {
+	var music = document.getElementById("music");
+	music.play();
+	console.log("playMusic called");
+}
+
+function goodMusic() {
+	if (goodEnding == 1) {
+	var goodMusic = document.getElementById("goodEnd");
+	goodMusic.play();
+	console.log("goodMusic called - Don't Fear the Reaper");
+	}
+}
+
+function badMusic() {
+	if (badEnding == 1) {
+	var badMusic = document.getElementById("badEnd");
+	badMusic.play();
+	console.log("badMusic called - Halloween Theme");
+	}
+}
+
+function wrongSound() {
+	var wrong = document.getElementById("wrong")
+	wrong.play();
+	console.log("wrongSound called - Loomis from H6");
+}
+
+function q1Correct() {
+	var q1Correct = document.getElementById("q1Correct")
+	q1Correct.play()
+	console.log("q1Correct called - Lynda in 1978")
+}
+
+function q2Correct() {
+	var q2Correct = document.getElementById("q2Correct")
+	q2Correct.play();
+	console.log("q2Correct called - Shit Earl!")
+}
+
+function q3Correct() {
+	var q3Correct = document.getElementById("q3Correct")
+	q3Correct.play();
+	console.log("q3Correct called - Kill For Him")
+}
+
+function q4Correct() {
+	var q4Correct = document.getElementById("q4Correct")
+	q4Correct.play();
+	console.log("q4Correct called - Laurie's Good Bye")
+}
+
+function q5Correct() {
+	var q5Correct = document.getElementById("q5Correct")
+	q5Correct.play();
+	console.log("q5Correct called - Loomis and Marion II")
+}
+
+function q6Correct() {
+	var q6Correct = document.getElementById("q6Correct")
+	q6Correct.play();
+	console.log("q6Correct called - You don't have to look far")
+}
+
+function q7Correct() {
+	var q7Correct = document.getElementById("q7Correct")
+	q7Correct.play();
+	console.log("q7Correct called - Allyson Explains")
+}
+
+function q8Correct() {
+	var q8Correct = document.getElementById("q8Correct")
+	q8Correct.play();
+	console.log("q8Correct called - I wish I had you all alone")
+}
+
+function q9Correct() {
+	var q9Correct = document.getElementById("q9Correct")
+	q9Correct.play();
+	console.log("q9Correct called - Mommy, It's raining red")
+}
+
+function q10Correct() {
+	var q10Correct = document.getElementById("q10Correct")
+	q10Correct.play();
+	console.log("q10Correct called - Hacksaw Not Jim Duggan")
+} 
 
 /**************** Display Info *****************/
+// The Info button will display information relevant to the game
+// The Close button will take the user back to the start screen
 function clickInfo () 
 {
 	document.getElementById("startArea").style.display = "none";
@@ -26,7 +125,6 @@ function closeInfo()
 
 /**************** Start Game *****************/
 function startGame() {
-
 	// Change .png background to .gif to start animation / Hide Buttons
 	// If the animation has already played during the session, do not play if user opts to play again
 	if (animation == 0) {
@@ -35,6 +133,7 @@ function startGame() {
 	setTimeout(function() { startArea.style.display = "none"}, 10000);
 	document.getElementById("startbutton").style.display = "none";
 	document.getElementById("infobutton").style.display = "none";
+	playMusic();
 	}
 
 	else {
@@ -55,9 +154,7 @@ function startGame() {
 	console.log("startGame() ", "Scoring System Logging: ", question.id, correct, animation);
 }
 
-/****************
-Reset Game 
-*****************/
+/**************** Reset Game *****************/
 function resetGame() {
 	animation++;
 
@@ -76,7 +173,8 @@ function resetGame() {
 	document.getElementById("startbutton").style.display = "block";
 	document.getElementById("infobutton").style.display = "block";
 	document.getElementById("startArea").style.display = "grid";
-	document.getElementById("endArea").style.display = "none";
+	document.getElementById("endAreaGood").style.display = "none";
+	document.getElementById("endAreaBad").style.display = "none";
 		
 	console.log("resetGame()", "Scoring System Logging: ", question.id,  correct);
 	
@@ -89,11 +187,7 @@ Option Functions
 - Changes should be applied upon clicking the submit button 
 - selected1 through selected4 variables are used for condition evaluation to determine which answer is correct
 *****************/
-
-// Option 1
 function select1() {
-	
-		// Set op1 to true, set all other option elements to false
 		if (op1.className == "selectionFalse") {
 			
 			selected1 = true;
@@ -105,21 +199,21 @@ function select1() {
 			document.getElementById("op2").className = "selectionFalse";
 			document.getElementById("op3").className = "selectionFalse";
 			document.getElementById("op4").className = "selectionFalse";
+			document.getElementById("submitA").disabled = false;
 
 		console.log("Option 1 Selected", selected1, selected2, selected3, selected4);
 
 	}
 }
-	
-// Option 2
+// *****************	
 		function select2() {
 	
-		// Set op2 to true, set all over option elements ot false 
 		if (op2.className == "selectionFalse") {
 		document.getElementById("op1").className = "selectionFalse";
 		document.getElementById("op2").className = "selectionTrue";
 		document.getElementById("op3").className = "selectionFalse";
 		document.getElementById("op4").className = "selectionFalse";
+		document.getElementById("submitA").disabled = false;
 
 		selected1 = false;
 		selected2 = true; 
@@ -127,19 +221,16 @@ function select1() {
 		selected4 = false;
 
 		console.log("Option 2 Selected");
-
 	} 
-		}
-	
-// Option 3
+}
+// *****************	
 		function select3() {
-
-		// Set op3 to true, set all other option elements to false	
 		if (op3.className == "selectionFalse") {
 		document.getElementById("op1").className = "selectionFalse";
 		document.getElementById("op2").className = "selectionFalse";
 		document.getElementById("op3").className = "selectionTrue";
 		document.getElementById("op4").className = "selectionFalse";
+		document.getElementById("submitA").disabled = false;
 
 		selected1 = false;
 		selected2 = false; 
@@ -150,16 +241,15 @@ function select1() {
 	
 	}
 }
-
-// Option 4
+// *****************
 		function select4() {
 
-		// Set op4 to true, set all other option elements to false
 		if (op4.className == "selectionFalse") {
 		document.getElementById("op1").className = "selectionFalse";
 		document.getElementById("op2").className = "selectionFalse";
 		document.getElementById("op3").className = "selectionFalse";
 		document.getElementById("op4").className = "selectionTrue";
+		document.getElementById("submitA").disabled = false;
 
 		selected1 = false;
 		selected2 = false; 
@@ -171,133 +261,127 @@ function select1() {
 	}
 
 /**************** Begin Questions *****************/
-
-// Content for the first Question 
+// Sets question content which will be pulled by the nextQ function based on the "id"
 let question = [
 	{
 		id: 1,
 		headerQ: "Question 1",
-		content: "When was Michael Myers born?",
-		op1: "October 31st, 1978",
-		op2: "October 31st, 1963", 
-		op3: "October 19th, 1957", //correct
-		op4: "October 19th, 1963"
+		content: "In Halloween 1978, who does Lynda suggest is the driver of the Smith's Grove company car?",
+		op1: "Ben Tramer",
+		op2: "Tommy Doyle", 
+		op3: "Devon Graham", //correct
+		op4: "Tommy Jarvis"
 
 	},
-// Content for the second Question 
+// *****************
 	{
 		id: 2,
 		headerQ: "Question 2",
-		content: "Of these characters, who is the only one to never die in a Halloween film?",
-		op1: "Lindsay Wallace", //correct
-		op2: "Laurie Strode",
-		op3: "Tommy Doyle",
-		op4: "Doctor Loomis"
+		content: "Who was the first person to be killed for being mistaken as Michael Myers?",
+		op1: "Ted Hollister", //correct
+		op2: "Ben Tramer",
+		op3: "Corey Cunningham",
+		op4: "Mr. Tivoli"
 	},
-// Content for the third Question 
+// *****************
 	{
 		id: 3,
 		headerQ: "Question 3",
-		content: "Who is Laurie Strode's secret crush in Halloween 1978?",
-		op1: "Devon Graham",
-		op2: "Ted Hollister",
-		op3: "Jimmy (EMT)",
-		op4: "Ben Tramer" // correct
+		content: "Who is teased as Michael's first succesor that is NOT a relative of his?",
+		op1: "Jamie Lloyd",
+		op2: "Corey Cunningham",
+		op3: "The Man in Black",
+		op4: "Danny Strode" // correct
 	},
 
-// Content for the fourth Question 
+// *****************
 	{
 		id: 4,
 		headerQ: "Question 4",
-		content: "In 2018, Laurie stated that Michael killed 5 people before captivity. Who was his second victim?",
-		op1: "Annie",
-		op2: "Tow Truck Driver", // correct
-		op3: "Bob",
-		op4: "Linda" 
+		content: "What are Laurie's last words to Michael in Halloween Resurrection?",
+		op1: "Happy Halloween, Michael",
+		op2: "I'll see you in Hell", // correct
+		op3: "The Price is Wrong, Bitc!",
+		op4: "It's your last Halloween" 
 	},
 
-// Content for the fifth Question 
+// *****************
 	{
 		id: 5,
 		headerQ: "Question 5",
-		content: "What is Michael Myers' middle name?",
-		op1: "Nicole",
-		op2: "Also Michael",
-		op3: "James",
-		op4: "Audrey" // correct
+		content: "In Halloween II, Dr. Loomis theorized that the feast of Samhain is not about ghosts or goblins, but about what?",
+		op1: "A Runic Celebration",
+		op2: "Satanic Worship",
+		op3: "A Party that is Lit",
+		op4: "The Unconscious Mind" // correct
 	},
-
-// Content for the sixth Question 
+// *****************
 	{
 		id: 6,
 		headerQ: "Question 6",
-		content: "The character behind The Man in Black from Halloween 6 debuted in what film?",
-		op1: "Halloween (1978)", //correct
-		op2: "Halloween II",
-		op3: "Halloween 4",
-		op4: "Halloween 6"
+		content: "In Halloween Resurrection, Jim also has a theory regarding Michael Myers and the unconscious mind. Who does he think Michael is?",
+		op1: "All of Us", //correct
+		op2: "The Anti-Christ",
+		op3: "A Copycat Killer",
+		op4: "A tortured soul"
 	},
-
-// Content for the seventh Question 
+// *****************
 	{
 		id: 7,
 		headerQ: "Question 7",
-		content: "What character recalls when Michael heard voices in the 'Thorn Trilogy?'",
-		op1: "Mrs. Ellrod",
-		op2: "Ms. Blankenship", // correct
-		op3: "Dr. Mathis",
-		op4: "Dr. Loomis" 
+		content: "What drove Michael to go after Laurie Strode in 2018?",
+		op1: "Revenge",
+		op2: "Dr. Sartain", // correct
+		op3: "'The Evil'",
+		op4: "A Curse" 
 	},
-
-// Content for the eigth Question 
+// *****************
 	{
 		id: 8,
 		headerQ: "Question 8",
-		content: "What weapon did Jamie Lloyd use when she attacked her foster mom?",
-		op1: "Scissors", // correct
-		op2: "A scalpel",
-		op3: "A kitchen knife",
-		op4: "A carpet knife"
+		content: "In Halloween 2018, a song was written specifically to reference a scene in 1978. What is the title?",
+		op1: "Close To Me", // correct
+		op2: "Until It Sleeps",
+		op3: "Haunted Head",
+		op4: "Man Behind the Mask"
 	},
-
-// Content for the ninth Question 
+// *****************
 	{
 		id: 9,
 		headerQ: "Question 9",
-		content: "What Halloween film includes Michael Myers but not Haddonfield?",
-		op1: "Halloween Ends",
-		op2: "Halloween H20", // correct
-		op3: "Rob Zombie's Halloween II",
-		op4: "Halloween III"
+		content: "Before we got 'Willy the Kid' in Halloween Ends, we got 'Barry Sims' in Halloween 6. What lead Tommy to discover Barry's body?",
+		op1: "Thumping from the Basement",
+		op2: "Little Girl dancing in Blood", // correct
+		op3: "A Car Horn",
+		op4: "Tommy Saw it Happen"
 	},
-
-// Content for the tenth Question 
+// *****************
 	{
 		id: 10,
 		headerQ: "Question 10",
-		content: "What Halloween movie includes multiple masks, including a digitized mask?",
-		op1: "Halloween III",
-		op2: "Halloween H20", // correct
-		op3: "Halloween 6",
-		op4: "Halloween Kills" 
+		content: "Who in the Halloween Universe murdered his family around the same time period Michael killed Judith?",
+		op1: "Corey Cunningham",
+		op2: "Charlie Bowles", // correct
+		op3: "Sam Loomis",
+		op4: "Elias Voorhees" 
 	}
 ]
 
-/****************
-Next Question 
-*****************/
+/**************** nextQ() *****************/
+// The nextQ function runs when the user clicks the "Next" button, increases the question.id variable, and pulls the
+// subsequent question and answer data 
+// When question.id hits 11, the End Screen is populated
 function nextQ() {
 
 question.id++;
 document.getElementById("nextQ").disabled = true; 
-document.getElementById("submitA").disabled = false;
+document.getElementById("submitA").disabled = true;
 document.getElementById("op1").disabled = false;
 document.getElementById("op2").disabled = false;
 document.getElementById("op3").disabled = false;
 document.getElementById("op4").disabled = false;
 
 if (question.id == 1) {
-
 	document.getElementById("headerQ").innerHTML = question[0].headerQ;
 	document.getElementById("content").innerHTML = question[0].content;
 	document.getElementById("op1").innerHTML = question[0].op1;
@@ -307,7 +391,7 @@ if (question.id == 1) {
 
 	console.log("Question 1 Called", "question.id: ", question.id,  "correct: ", correct);
 }
-
+// *****************
 if (question.id == 2) {
 	document.getElementById("op1").className = "selectionFalse";
 	document.getElementById("op2").className = "selectionFalse";
@@ -323,7 +407,7 @@ if (question.id == 2) {
 
 	console.log("Question 2 Called", "question.id: ", question.id,  "correct: ", correct);
 	}
-
+// *****************
 if (question.id == 3) {
 	document.getElementById("op1").className = "selectionFalse";
 	document.getElementById("op2").className = "selectionFalse";
@@ -337,9 +421,9 @@ if (question.id == 3) {
 	document.getElementById("op3").innerHTML = question[2].op3;
 	document.getElementById("op4").innerHTML = question[2].op4;
 
-	console.log("Question 2 Called", "question.id: ", question.id,  "correct: ", correct);
+	console.log("Question 3 Called", "question.id: ", question.id,  "correct: ", correct);
 	}
-
+// *****************
 if (question.id == 4) {
 	document.getElementById("op1").className = "selectionFalse";
 	document.getElementById("op2").className = "selectionFalse";
@@ -353,9 +437,9 @@ if (question.id == 4) {
 	document.getElementById("op3").innerHTML = question[3].op3;
 	document.getElementById("op4").innerHTML = question[3].op4;
 
-	console.log("Question 2 Called", "question.id: ", question.id,  "correct: ", correct);
+	console.log("Question 4 Called", "question.id: ", question.id,  "correct: ", correct);
 	}
-
+// *****************
 if (question.id == 5) {
 	document.getElementById("op1").className = "selectionFalse";
 	document.getElementById("op2").className = "selectionFalse";
@@ -369,9 +453,9 @@ if (question.id == 5) {
 	document.getElementById("op3").innerHTML = question[4].op3;
 	document.getElementById("op4").innerHTML = question[4].op4;
 
-	console.log("Question 2 Called", "question.id: ", question.id,  "correct: ", correct);
+	console.log("Question 5 Called", "question.id: ", question.id,  "correct: ", correct);
 	}
-
+// *****************
 if (question.id == 6) {
 	document.getElementById("op1").className = "selectionFalse";
 	document.getElementById("op2").className = "selectionFalse";
@@ -385,9 +469,9 @@ if (question.id == 6) {
 	document.getElementById("op3").innerHTML = question[5].op3;
 	document.getElementById("op4").innerHTML = question[5].op4;
 
-	console.log("Question 2 Called", "question.id: ", question.id,  "correct: ", correct);
+	console.log("Question 6 Called", "question.id: ", question.id,  "correct: ", correct);
 	}
-
+// *****************
 if (question.id == 7) {
 	document.getElementById("op1").className = "selectionFalse";
 	document.getElementById("op2").className = "selectionFalse";
@@ -401,9 +485,9 @@ if (question.id == 7) {
 	document.getElementById("op3").innerHTML = question[6].op3;
 	document.getElementById("op4").innerHTML = question[6].op4;
 
-	console.log("Question 2 Called", "question.id: ", question.id,  "correct: ", correct);
+	console.log("Question 7 Called", "question.id: ", question.id,  "correct: ", correct);
 	}
-
+// *****************
 if (question.id == 8) {
 	document.getElementById("op1").className = "selectionFalse";
 	document.getElementById("op2").className = "selectionFalse";
@@ -417,9 +501,9 @@ if (question.id == 8) {
 	document.getElementById("op3").innerHTML = question[7].op3;
 	document.getElementById("op4").innerHTML = question[7].op4;
 
-	console.log("Question 2 Called", "question.id: ", question.id,  "correct: ", correct);
+	console.log("Question 8 Called", "question.id: ", question.id,  "correct: ", correct);
 	}
-
+// *****************
 if (question.id == 9) {
 	document.getElementById("op1").className = "selectionFalse";
 	document.getElementById("op2").className = "selectionFalse";
@@ -433,9 +517,9 @@ if (question.id == 9) {
 	document.getElementById("op3").innerHTML = question[8].op3;
 	document.getElementById("op4").innerHTML = question[8].op4;
 
-	console.log("Question 2 Called", "question.id: ", question.id,  "correct: ", correct);
+	console.log("Question 9 Called", "question.id: ", question.id,  "correct: ", correct);
 	}
-
+// *****************
 if (question.id == 10) {
 	document.getElementById("op1").className = "selectionFalse";
 	document.getElementById("op2").className = "selectionFalse";
@@ -449,24 +533,50 @@ if (question.id == 10) {
 	document.getElementById("op3").innerHTML = question[9].op3;
 	document.getElementById("op4").innerHTML = question[9].op4;
 
-	console.log("Question 2 Called", "question.id: ", question.id,  "correct: ", correct);
+	console.log("Question 10 Called", "question.id: ", question.id,  "correct: ", correct);
+	}
+// *****************
+if (question.id == 11 && correct >= 7) {
+	document.getElementById("gameArea").style.display = "none";
+	document.getElementById("endAreaGood").style.display = "block";
+
+	setTimeout(function() {endAreaGood.className = "goodEnd"}, 12200);
+
+	goodEnding++;
+
+	if (endMusicG == 0) {
+		goodMusic();
 	}
 
-// Populates the endArea screen which displays stats and an option to replay
-if (question.id == 11) {
-	document.getElementById("gameArea").style.display = "none";
-	document.getElementById("endArea").style.display = "grid";
-
-	// Timeout to change class so png shows instead of gif (stopping animation)
-	setTimeout(function() {endArea.className = "endscreen"}, 11500);
-
 	document.getElementById("correctNum").innerHTML = ("Correct: " + correct);
+
+	console.log("Ending Reached - Good Ending");
 	}	
+
+if (question.id == 11 && correct < 7) {
+	document.getElementById("gameArea").style.display = "none";
+	document.getElementById("endAreaBad").style.display = "block";
+
+	badEnding++;
+		
+	setTimeout(function() {endAreaBad.className = "badEnd"}, 8000);
+
+	if (endMusicB == 0) {
+		badMusic();
+	}
+
+	document.getElementById("correctNumBad").innerHTML = ("Correct: " + correct);
+
+	console.log("Ending Reached - Bad Ending");
+}	
 }
 
-/****************
-Submit Button
-*****************/
+/**************** submitA() *****************/
+// The submitA function executes when a user presses the "Submit" button 
+// The question.id and selected variables are evaluated through conditions 
+// to determine whether or not the answer is correct
+// User feedback is provided upon clicking the submit button
+// q#Correct functions play a sound byte respective to the result 
 function submitA() {
 
 	document.getElementById("submitA").disabled = true; 
@@ -475,223 +585,287 @@ function submitA() {
 	document.getElementById("op2").disabled = true;
 	document.getElementById("op3").disabled = true;
 	document.getElementById("op4").disabled = true; 
-
+// *****************
 	if (question.id == 1 && selected3 == true) {
 		correct++;
+		q1Correct();
 		document.getElementById("headerQ").innerHTML = "Correct"
-		document.getElementById("content").innerHTML = "Michael Myers was born on October 19th, 1957."
+		document.getElementById("content").innerHTML = "Lynda initially thinks Myers is Devon Graham. In Halloween Ends, Corey's mom knows a man named Devon that owns a call center."
 	}
 
 	if (question.id == 1 && selected1 == true) {
+		wrongSound();
 		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "October 31st, 1978 was the day that Michael stalked Laurie Strode and killed her friends"
+		document.getElementById("content").innerHTML = "Ben Tramer is Laurie's crush from the original film."
+		op1.className = "selectionWrong";
 	}
 
 	if (question.id == 1 && selected2 == true) {
+		wrongSound();
 		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "October 31st, 1963 is the day that Michael killed Judith"
+		document.getElementById("content").innerHTML = "Tommy Doyle is the boy Laurie babysat and could not drive legally at the time."
+		op2.className = "selectionWrong";
 	}
 
 	if (question.id == 1 && selected4 == true) {
+		wrongSound();
 		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Michael was born on October 19th, but not in 1963"
+		document.getElementById("content").innerHTML = "Tommy Jarvis is a protagonist in the Friday the 13th franchise, appearing in parts 4 - 6."
+		op4.className = "selectionWrong";
 	}
-
+// *****************
 	if (question.id == 2 && selected1 == true) {
 		correct++;
+		q2Correct();
 		document.getElementById("headerQ").innerHTML = "Correct"
-		document.getElementById("content").innerHTML = "Lindsay has survived Halloween 1978, Halloween Kills, Halloween Ends, and had a brief appearance in Halloween 4";
+		document.getElementById("content").innerHTML = "Ted Hollister was hiding in bushes when the mob from Halloween 4 mistook him for Michael and shot him to death.";
 	}
 
 	if (question.id == 2 && selected2 == true) {
+		wrongSound();
 		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Laurie is killed by Michael in Halloween Resurrection. She also dies off screen between Halloween II and Halloweeen 4";
+		document.getElementById("content").innerHTML = "Ben Tramer was mistaken for Michael, but was killed by a cop who did not see him crossing the road.";
+		op2.className = "selectionWrong";
 	}
 
 	if (question.id == 2 && selected3 == true) {
+		wrongSound();
 		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Tommy was killed in Halloween Kills by Michael Myers";
+		document.getElementById("content").innerHTML = "Corey Cunningham is accused of being like Michael, but is not killed due to being mistaken as him.";
+		op3.className = "selectionWrong";
 	}
 
 	if (question.id == 2 && selected4 == true) {
+		wrongSound();
 		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Doctor Loomis was killed by Michael in Rob Zombie's Halloween. Then again in Rob Zombie's Halloween II. It shouldn't count but it does";
+		document.getElementById("content").innerHTML = "Mr. Tavoli took his own life after being mistaken as Michael.";
+		op4.className = "selectionWrong";
 	}
-
+// *****************
 	if (question.id == 3 && selected4 == true) {
 		correct++;
+		q3Correct();
 		document.getElementById("headerQ").innerHTML = "Correct"
-		document.getElementById("content").innerHTML = "Laurie confesses to Annie that she would rather go to the Halloween Dance with Ben Tramer. Hawkins confirms Laurie's crush in Halloween Kills";
+		document.getElementById("content").innerHTML = "The Cult of Thorn had Danny Strode targeted as the next Shape, seemingly after Myers would kill baby Stephen.";
 	}
 
 	if (question.id == 3 && selected1 == true) {
+		wrongSound();
 		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Devon Graham is who Annie thinks is driving the Smith's Grove car when she makes her 'Speed Kills' comment. 'Devon' has a call center in Halloween Ends and is likely the same Devon.";
+		document.getElementById("content").innerHTML = "Jamie Lloyd was seemingly set up to be the next Shape, but she is Michael's niece.";
+		op1.className = "selectionWrong";
 	}
 
 	if (question.id == 3 && selected2 == true) {
+		wrongSound();
 		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Ted Hollister is the man who was accidentally killed by the mob in Halloween 4";
+		document.getElementById("content").innerHTML = "Corey Cunningham wasn't introduced until Halloween Ends in 2022.";
+		op2.className = "selectionWrong";
 	}
 
 	if (question.id == 3 && selected3 == true) {
+		wrongSound();
 		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Jimmy was introduced in Halloween II and there seemed to be a slight romantic interest, but was not mentioned in the first film";
+		document.getElementById("content").innerHTML = "'The Man in Black' first appeared in Halloween 5, but had always been an ally or keeper of The Shape.";
+		op3.className = "selectionWrong";
 	}
-
+// *****************
 	if (question.id == 4 && selected2 == true) {
 		correct++;
+		q4Correct();
 		document.getElementById("headerQ").innerHTML = "Correct"
-		document.getElementById("content").innerHTML = "Michael killed the tow truck driver on his way back to Haddonfield. Judith was his first victim.";
+		document.getElementById("content").innerHTML = "Laurie kisses Michael and says she'll see him in hell before falling to hear death.";
 	}
 
 	if (question.id == 4 && selected1 == true) {
+		wrongSound();
 		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Annie is Michael's third victim";
+		document.getElementById("content").innerHTML = "Laurie says 'Happy Halloween, Michael' in Halloween 2018.";
+		op1.className = "selectionWrong";
 	}
 
 	if (question.id == 4 && selected3 == true) {
+		wrongSound();
 		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Bob is Michael's fourth victim";
+		document.getElementById("content").innerHTML = "This is a quote from Happy Gilmore as he was fighting his own Boogeyman.";
+		op3.className = "selectionWrong";
 	}
 
 	if (question.id == 4 && selected4 == true) {
+		wrongSound();
 		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Linda is Michael's fifth victim";
+		document.getElementById("content").innerHTML = "The 'Last Halloween' line does appear in some trailers for Halloween Ends, but was not spoken by Laurie in Resurrection.";
+		op4.className = "selectionWrong";
 	}
-
+// *****************
 	if (question.id == 5 && selected4 == true) {
 		correct++;
+		q5Correct();
 		document.getElementById("headerQ").innerHTML = "Correct"
-		document.getElementById("content").innerHTML = "Michael's middle name 'Audrey' was first confirmed in a scene added to the first movie. In 2018, his middle initial solidifies this point";
+		document.getElementById("content").innerHTML = "Loomis theorizes that druids who practiced Samhain were drvien by their own, unconscious darkness rather than an external, spiritual force.";
 	}
 
 	if (question.id == 5 && selected1 == true) {
+		wrongSound();
 		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Nicole is probably the most common middle name for women in the history of history along with Marie. But it's not Michael's middle name";
+		document.getElementById("content").innerHTML = "Runes are brought into the storyline in Halloween 5, but were not discussed in Halloween II.";
+		op1.className = "selectionWrong";
 	}
 
 	if (question.id == 5 && selected2 == true) {
+		wrongSound();
 		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Michael Michael Myers sounds cool, but it's not his name";
+		document.getElementById("content").innerHTML = "Loomis would later state in Halloween 5 that he prayed Michael would burn in Hell, but knew Hell would not have him. He doesn't blame Satan at any point.";
+		op2.className = "selectionWrong";
 	}
 
 	if (question.id == 5 && selected3 == true) {
+		wrongSound();
 		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "James is a great guess, but it's still wrong.";
+		document.getElementById("content").innerHTML = "Halloween II came out in 1981 AD / 35 BT (Before TikTok), so people did not talk like this at the time.";
+		op3.className = "selectionWrong";
 	}
-
+// *****************
 	if (question.id == 6 && selected1 == true) {
 		correct++;
+		q6Correct();
 		document.getElementById("headerQ").innerHTML = "Correct"
-		document.getElementById("content").innerHTML = "Dr. Wynn was the one who Dr. Loomis confronted stating that Michael was on his way back to Haddonfield. 'Well he was doing very well last night! Maybe somebody around here gave him lessons'";
+		document.getElementById("content").innerHTML = "Jim feels that Michael Myers is the darkness inside us all. He gives an example of wanting to strangle an old woman for taking too long at checkout.";
 	}
 
 	if (question.id == 6 && selected2 == true) {
+		wrongSound();
 		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Dr. Wynn did not appear in Halloween II";
+		document.getElementById("content").innerHTML = "Jim doesn't come across as somebody devoted to the Christian religion and likely wouldn't point toward the Anti-Christ.";
+		op2.className = "selectionWrong";
 	}
 
 	if (question.id == 6 && selected3 == true) {
+		wrongSound();
 		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "While Halloween 4 is considered the first movie in the 'Thorn Trilogy,' the 'Man in Black' concept wasn't introduced until Halloween 5";
+		document.getElementById("content").innerHTML = "Jim has theories, but none of them revolve around a copy cat.";
+		op3.className = "selectionWrong";
 	}
 
 	if (question.id == 6 && selected4 == true) {
+		wrongSound();
 		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Halloween 6 revealed that Dr. Wynn is the 'Man in Black,' but this was not Dr. Wynn's first appearance";
+		document.getElementById("content").innerHTML = "While there are some indications Michael was abused, these revelations did not yet occur and would later be revealed to be part of the 'Dangertainment' show.";
+		op4.className = "selectionWrong";
 	}
-
+// *****************
 	if (question.id == 7 && selected2 == true) {
 		correct++;
+		q7Correct();
 		document.getElementById("headerQ").innerHTML = "Correct"
-		document.getElementById("content").innerHTML = "Mrs. Blankenship debuts in Halloween 6 and owns the property that Tommy Doyle is renting. She is later revealed to be involved with the Thorn Cult";
+		document.getElementById("content").innerHTML = "Michael Myers had no interest in pursuing Laurie Strode. Sartain drove him to pursue Laurie both literally and figuratively.";
 	}
 
 	if (question.id == 7 && selected1 == true) {
+		wrongSound();
 		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Mrs. Ellrod debtus in Halloween II at the beginning of the film. Michael steals a knife from her counter top. She is referenced in Halloween 2018";
+		document.getElementById("content").innerHTML = "There is no strong indication that Michael is concerned with revenge. Each battle with Laurie is circumstantial.";
+		op1.className = "selectionWrong";
 	}
 
 	if (question.id == 7 && selected3 == true) {
+		wrongSound();
 		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Dr. Mathis is mentioned in Halloween II and Halloween Kills. He is killed by Corey Cunningham in Halloween Ends";
+		document.getElementById("content").innerHTML = "The concept of Michael being driven by an evil force of sorts is explored in Ends, but not credited for Michael.";
+		op3.className = "selectionWrong";
 	}
 
 	if (question.id == 7 && selected4 == true) {
+		wrongSound();
 		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Dr. Loomis is not aware of the Thorn curse until Tommy Doyle brings it to his attention in Halloween 6";
+		document.getElementById("content").innerHTML = "The Curse storyline is explored in Halloween 5 and 6, neither of which are considered cannonical in the 2018 timeline.";
+		op4.className = "selectionWrong";
 	}
-
+// *****************
 	if (question.id == 8 && selected1 == true) {
 		correct++;
+		q8Correct();
 		document.getElementById("headerQ").innerHTML = "Correct"
-		document.getElementById("content").innerHTML = "Jamie grabs a pair of scissors off of a counter top as her foster mom is drawing a bath";
+		document.getElementById("content").innerHTML = "Jamie Lee Curtis made up a song to sing during filming of the original film so they wouldn't need the rights. This song plays both in the film and during the credits.";
 	}
 
 	if (question.id == 8 && selected2 == true) {
+		wrongSound();
 		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Micahel uses a scalpel in Halloween II, but this is not the same weapon Jamie uses";
+		document.getElementById("content").innerHTML = "'Until It Sleeps' is a song by Metalica about battling personal demons.";
+		op2.className = "selectionWrong";
 	}
 
 	if (question.id == 8 && selected3 == true) {
+		wrongSound();
 		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Kitchen knives are synonymous with Halloween, but Jamie did not use one when she attacked her foster mom";
+		document.getElementById("content").innerHTML = "'Haunted Head' is a song by Mark Crozer, who performed WWE Superstar Bray Wyatt's original theme.";
+		op3.className = "selectionWrong";
 	}
 
 	if (question.id == 8 && selected4 == true) {
+		wrongSound();
 		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Jamie did not use a carpet knife. She just didn't. That's all";
+		document.getElementById("content").innerHTML = "'Man Behind the Mask' is a song written and performed by Alice Cooper for the Friday the 13th: Part IV film.";
+		op4.className = "selectionWrong";
 	}
-
+// *****************
 	if (question.id == 9 && selected2 == true) {
 		correct++;
+		q9Correct();
 		document.getElementById("headerQ").innerHTML = "Correct"
-		document.getElementById("content").innerHTML = "Halloween H20 opens in Langon, Illnois and the rest of the movie takes place in California";
+		document.getElementById("content").innerHTML = "Tommy hears a young girl claim that it's raining red. In the Producer's Cut, she sings the lines.";
 	}
 
 	if (question.id == 9 && selected1 == true) {
-		correct++;
+		wrongSound();
 		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Halloween Ends is almost entirely based in Haddonfield";
+		document.getElementById("content").innerHTML = "John Strode heard thumping coming from the dryer, where he found the remains of his wife Debra.";
+		op1.className = "selectionWrong";
 	}
 
 	if (question.id == 9 && selected3 == true) {
-		correct++;
+		wrongSound();
 		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Rob Zombie's Halloween II does take place in Haddonfield. Let's move on...";
+		document.getElementById("content").innerHTML = "Passing out on the car horn is a trope in multiple Halloween films, but it wasn't a car horn that lead Tommy to Barry's body.";
+		op3.className = "selectionWrong";
 	}
 
 	if (question.id == 9 && selected4 == true) {
-		correct++;
+		wrongSound();
 		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Halloween III does not take place in Haddonfield, but Myers is a fictional character in this film";
+		document.getElementById("content").innerHTML = "Tommy either didn't see it happen or he was really good at pretending he didn't.";
+		op4.className = "selectionWrong";
 	}
-
+// *****************
 	if (question.id == 10 && selected2 == true) {
 		correct++;
+		q10Correct();
 		document.getElementById("headerQ").innerHTML = "Correct"
-		document.getElementById("content").innerHTML = "Halloween H20 includes multiple masks, ranging from the Halloween 6 mask to a digital mask used to cover the original mask seen in early trailers";
+		document.getElementById("content").innerHTML = "Charlie Bowles killed his family about 15 years before 1978. His story is expanded on in the graphic novel 'Halloween: Nightdance.'";
 	}
 
 	if (question.id == 10 && selected1 == true) {
-		correct++;
+		wrongSound();
 		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Halloween III did include multiple masks, but outside of a trailer on a TV none of them are the Myers mask";
+		document.getElementById("content").innerHTML = "Corey Cunningham had not been born when Michael killed Judith.";
+		op1.className = "selectionWrong";
 	}
 
 	if (question.id == 10 && selected3 == true) {
-		correct++;
+		wrongSound();
 		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Despite multiple versions and a convoluted plot, one consisteny in Halloween 6 is the mask";
+		document.getElementById("content").innerHTML = "Sam Loomis is Dr. Loomis' name, which is a reference to one of the protagonists in Psycho who goes by the same name.";
+		op3.className = "selectionWrong";
 	}
 
 	if (question.id == 10 && selected4 == true) {
-		correct++;
+		wrongSound();
 		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Michael's mask was burned in Halloween 2018, but Michael keeps it for the duration of Halloween Kills";
+		document.getElementById("content").innerHTML = "Elias Voorhees is the name of Jason Voorhees' father and has nothing to do with Halloween.";
+		op4.className = "selectionWrong";
 	}
 
 	console.log("submitA Function Called", "question.id: ", question.id, 
-	"correct", correct, "op1 className: ", op1.className);
+	"correct: ", correct);
 }
