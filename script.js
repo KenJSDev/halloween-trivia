@@ -14,92 +14,108 @@ var badEnding = 0;
 // play music at certain parts of the game. Different sounds will
 // play when the user submits an answer depending on whether or not
 // it is correct
-function playMusic() {
-	var music = document.getElementById("music");
-	music.play();
-	console.log("playMusic called");
+function playMusic() 
+{
+  var music = document.getElementById("music");
+  music.play();
+  console.log("playMusic called");
 }
 
-function goodMusic() {
-	if (goodEnding == 1) {
-	var goodMusic = document.getElementById("goodEnd");
-	goodMusic.play();
-	console.log("goodMusic called - Don't Fear the Reaper");
-	}
+function goodMusic() 
+{
+  if (goodEnding == 1) 
+  {
+    var goodMusic = document.getElementById("goodEnd");
+    goodMusic.play();
+    console.log("goodMusic called - Don't Fear the Reaper");
+  }
 }
 
-function badMusic() {
-	if (badEnding == 1) {
-	var badMusic = document.getElementById("badEnd");
-	badMusic.play();
-	console.log("badMusic called - Halloween Theme");
-	}
+function badMusic() 
+{
+  if (badEnding == 1) 
+  {
+    var badMusic = document.getElementById("badEnd");
+    badMusic.play();
+    console.log("badMusic called - Halloween Theme");
+  }
 }
 
-function wrongSound() {
-	var wrong = document.getElementById("wrong")
-	wrong.play();
-	console.log("wrongSound called - Loomis from H6");
+function wrongSound() 
+{
+  var wrong = document.getElementById("wrong")
+  wrong.play();
+  console.log("wrongSound called - Loomis from H6");
 }
 
-function q1Correct() {
-	var q1Correct = document.getElementById("q1Correct")
-	q1Correct.play()
-	console.log("q1Correct called - Lynda in 1978")
+function q1Correct() 
+{
+  var q1Correct = document.getElementById("q1Correct")
+  q1Correct.play()
+  console.log("q1Correct called - Lynda in 1978")
 }
 
-function q2Correct() {
-	var q2Correct = document.getElementById("q2Correct")
-	q2Correct.play();
-	console.log("q2Correct called - Shit Earl!")
+function q2Correct() 
+{
+  var q2Correct = document.getElementById("q2Correct")
+  q2Correct.play();
+  console.log("q2Correct called - Shit Earl!")
 }
 
-function q3Correct() {
-	var q3Correct = document.getElementById("q3Correct")
-	q3Correct.play();
-	console.log("q3Correct called - Kill For Him")
+function q3Correct() 
+{
+  var q3Correct = document.getElementById("q3Correct")
+  q3Correct.play();
+  console.log("q3Correct called - Kill For Him")
 }
 
-function q4Correct() {
-	var q4Correct = document.getElementById("q4Correct")
-	q4Correct.play();
-	console.log("q4Correct called - Laurie's Good Bye")
+function q4Correct() 
+{
+  var q4Correct = document.getElementById("q4Correct")
+  q4Correct.play();
+  console.log("q4Correct called - Laurie's Good Bye")
 }
 
-function q5Correct() {
-	var q5Correct = document.getElementById("q5Correct")
-	q5Correct.play();
-	console.log("q5Correct called - Loomis and Marion II")
+function q5Correct() 
+{
+  var q5Correct = document.getElementById("q5Correct")
+  q5Correct.play();
+  console.log("q5Correct called - Loomis and Marion II")
 }
 
-function q6Correct() {
-	var q6Correct = document.getElementById("q6Correct")
-	q6Correct.play();
-	console.log("q6Correct called - You don't have to look far")
+function q6Correct()
+{
+  var q6Correct = document.getElementById("q6Correct")
+  q6Correct.play();
+  console.log("q6Correct called - You don't have to look far")
 }
 
-function q7Correct() {
-	var q7Correct = document.getElementById("q7Correct")
-	q7Correct.play();
-	console.log("q7Correct called - Allyson Explains")
+function q7Correct() 
+{
+  var q7Correct = document.getElementById("q7Correct")
+  q7Correct.play();
+  console.log("q7Correct called - Allyson Explains")
 }
 
-function q8Correct() {
-	var q8Correct = document.getElementById("q8Correct")
-	q8Correct.play();
-	console.log("q8Correct called - I wish I had you all alone")
+function q8Correct() 
+{
+  var q8Correct = document.getElementById("q8Correct")
+  q8Correct.play();
+  console.log("q8Correct called - I wish I had you all alone")
 }
 
-function q9Correct() {
-	var q9Correct = document.getElementById("q9Correct")
-	q9Correct.play();
-	console.log("q9Correct called - Mommy, It's raining red")
+function q9Correct() 
+{
+  var q9Correct = document.getElementById("q9Correct")
+  q9Correct.play();
+  console.log("q9Correct called - Mommy, It's raining red")
 }
 
-function q10Correct() {
-	var q10Correct = document.getElementById("q10Correct")
-	q10Correct.play();
-	console.log("q10Correct called - Hacksaw Not Jim Duggan")
+function q10Correct() 
+{
+  var q10Correct = document.getElementById("q10Correct")
+  q10Correct.play();
+  console.log("q10Correct called - Hacksaw Not Jim Duggan")
 } 
 
 /**************** Display Info *****************/
@@ -107,41 +123,44 @@ function q10Correct() {
 // The Close button will take the user back to the start screen
 function clickInfo () 
 {
-	document.getElementById("startArea").style.display = "none";
-	document.getElementById("infoArea").style.display = "block";
+  document.getElementById("startArea").style.display = "none";
+  document.getElementById("infoArea").style.display = "block";
 
-	console.log("Info Button: Clicked");
-	console.log(infoArea.style.display);
+  console.log("Info Button: Clicked");
+  console.log(infoArea.style.display);
 }	
 
 function closeInfo() 
 {
-	document.getElementById("startArea").style.display = "grid";
-	document.getElementById("infoArea").style.display = "none";
+  document.getElementById("startArea").style.display = "grid";
+  document.getElementById("infoArea").style.display = "none";
 
-	console.log("Back Button: Clicked");
-	console.log(infoArea.style.display);
+  console.log("Back Button: Clicked");
+  console.log(infoArea.style.display);
 }
 
 /**************** Start Game *****************/
-function startGame() {
-	// Change .png background to .gif to start animation / Hide Buttons
-	// If the animation has already played during the session, do not play if user opts to play again
-	if (animation == 0) {
-	startArea.className = "startscreenAnimated";
-	setTimeout(function() { gameArea.style.display = "block"}, 10000);
-	setTimeout(function() { startArea.style.display = "none"}, 10000);
-	document.getElementById("startbutton").style.display = "none";
-	document.getElementById("infobutton").style.display = "none";
-	playMusic();
-	}
+// Change .png background to .gif to start animation / Hide Buttons
+// If the animation has already played during the session, do not play if user opts to play again
+function startGame() 
+{
+  if (animation == 0) 
+  {
+  startArea.className = "startscreenAnimated";
+  setTimeout(function() { gameArea.style.display = "block"}, 10000);
+  setTimeout(function() { startArea.style.display = "none"}, 10000);
+  document.getElementById("startbutton").style.display = "none";
+  document.getElementById("infobutton").style.display = "none";
+  playMusic();
+  }
 
-	else {
-	document.getElementById("startArea").style.display = "none";
-	document.getElementById("gameArea").style.display = "block";
-	document.getElementById("startbutton").style.display = "none";
-	document.getElementById("infobutton").style.display = "none";
-	}
+  else 
+  {
+    document.getElementById("startArea").style.display = "none";
+    document.getElementById("gameArea").style.display = "block";
+    document.getElementById("startbutton").style.display = "none";
+    document.getElementById("infobutton").style.display = "none";
+  }
 
 	// Set question.id and correct to 0 to ensure that the score is reset
 	question.id = 0;
@@ -155,28 +174,29 @@ function startGame() {
 }
 
 /**************** Reset Game *****************/
-function resetGame() {
-	animation++;
+function resetGame() 
+{
+  animation++;
 
-	// Reset score so that the new game begins at 0
-	question.id = 0;
-	correct = 0;
+  // Reset score so that the new game begins at 0
+  question.id = 0;
+  correct = 0;
 
-	// Set all selections to selectionFalse
-	document.getElementById("op1").className = "selectionFalse";
-	document.getElementById("op2").className = "selectionFalse";
-	document.getElementById("op3").className = "selectionFalse";
-	document.getElementById("op4").className = "selectionFalse";
+  // Set all selections to selectionFalse
+  document.getElementById("op1").className = "selectionFalse";
+  document.getElementById("op2").className = "selectionFalse";
+  document.getElementById("op3").className = "selectionFalse";
+  document.getElementById("op4").className = "selectionFalse";
 
-	// Hide the endArea
-	startArea.className = "startscreen";
-	document.getElementById("startbutton").style.display = "block";
-	document.getElementById("infobutton").style.display = "block";
-	document.getElementById("startArea").style.display = "grid";
-	document.getElementById("endAreaGood").style.display = "none";
-	document.getElementById("endAreaBad").style.display = "none";
+  // Hide the endArea
+  startArea.className = "startscreen";
+  document.getElementById("startbutton").style.display = "block";
+  document.getElementById("infobutton").style.display = "block";
+  document.getElementById("startArea").style.display = "grid";
+  document.getElementById("endAreaGood").style.display = "none";
+  document.getElementById("endAreaBad").style.display = "none";
 		
-	console.log("resetGame()", "Scoring System Logging: ", question.id,  correct);
+  console.log("resetGame()", "Scoring System Logging: ", question.id,  correct);
 	
 }
 
@@ -187,61 +207,64 @@ Option Functions
 - Changes should be applied upon clicking the submit button 
 - selected1 through selected4 variables are used for condition evaluation to determine which answer is correct
 *****************/
-function select1() {
-		if (op1.className == "selectionFalse") {
+function select1() 
+{
+  if (op1.className == "selectionFalse") 
+  {
 			
-			selected1 = true;
-			selected2 = false; 
-			selected3 = false; 
-			selected4 = false;
+    selected1 = true;
+    selected2 = false; 
+    selected3 = false; 
+    selected4 = false;
 
-			document.getElementById("op1").className = "selectionTrue";
-			document.getElementById("op2").className = "selectionFalse";
-			document.getElementById("op3").className = "selectionFalse";
-			document.getElementById("op4").className = "selectionFalse";
-			document.getElementById("submitA").disabled = false;
+    document.getElementById("op1").className = "selectionTrue";
+    document.getElementById("op2").className = "selectionFalse";
+    document.getElementById("op3").className = "selectionFalse";
+    document.getElementById("op4").className = "selectionFalse";
+    document.getElementById("submitA").disabled = false;
 
-		console.log("Option 1 Selected", selected1, selected2, selected3, selected4);
-
-	}
+    console.log("Option 1 Selected", selected1, selected2, selected3, selected4);
+  }
 }
-// *****************	
-		function select2() {
-	
-		if (op2.className == "selectionFalse") {
-		document.getElementById("op1").className = "selectionFalse";
-		document.getElementById("op2").className = "selectionTrue";
-		document.getElementById("op3").className = "selectionFalse";
-		document.getElementById("op4").className = "selectionFalse";
-		document.getElementById("submitA").disabled = false;
 
-		selected1 = false;
-		selected2 = true; 
-		selected3 = false; 
-		selected4 = false;
+function select2() 
+{
+  if (op2.className == "selectionFalse") 
+  {
+    document.getElementById("op1").className = "selectionFalse";
+    document.getElementById("op2").className = "selectionTrue";
+    document.getElementById("op3").className = "selectionFalse";
+    document.getElementById("op4").className = "selectionFalse";
+    document.getElementById("submitA").disabled = false;
 
-		console.log("Option 2 Selected");
-	} 
+    selected1 = false;
+    selected2 = true; 
+    selected3 = false; 
+    selected4 = false;
+
+    console.log("Option 2 Selected");
+  } 
 }
-// *****************	
-		function select3() {
-		if (op3.className == "selectionFalse") {
-		document.getElementById("op1").className = "selectionFalse";
-		document.getElementById("op2").className = "selectionFalse";
-		document.getElementById("op3").className = "selectionTrue";
-		document.getElementById("op4").className = "selectionFalse";
-		document.getElementById("submitA").disabled = false;
+	
+function select3() 
+{
+  if (op3.className == "selectionFalse") 
+  {
+    document.getElementById("op1").className = "selectionFalse";
+    document.getElementById("op2").className = "selectionFalse";
+    document.getElementById("op3").className = "selectionTrue";
+    document.getElementById("op4").className = "selectionFalse";
+    document.getElementById("submitA").disabled = false;
 
-		selected1 = false;
-		selected2 = false; 
-		selected3 = true; 
-		selected4 = false;
+    selected1 = false;
+    selected2 = false; 
+    selected3 = true; 
+    selected4 = false;
 	
-		console.log("Option 3 Selected");
-	
-	}
+    console.log("Option 3 Selected");	
+  }
 }
-// *****************
+// PICK UP CODE CLEAN UP / INDENT EFFORTS HERE
 		function select4() {
 
 		if (op4.className == "selectionFalse") {
