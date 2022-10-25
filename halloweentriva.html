@@ -1,151 +1,155 @@
 <html>
 
-	<head>
-		<title>Halloween Trivia</title>
-		<link rel="icon" type="image/x-icon" href="favicon.ico">
-		<link rel="stylesheet" href="styles.css">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	</head>
+  <head>
+    <title>Halloween Trivia</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
 	
-	<body class="main">
+  <body class="main">
 
-		<div class="titletext"></div>
-
-	<!-- Start Menu -->
-		<div id="startArea" class="startscreen" style="display: grid;">
-			<button class="jackobutton" id="startbutton" onclick="startGame()">Start</button>
-			<button class="jackobutton" id="infobutton" onclick="clickInfo()">Info</button>
-		</div>
+  <div class="titletext"></div>
+ 
+  <!-- Start Menu -->
+    <div id="startArea" class="startscreen" style="display: grid;">
+      <button class="jackobutton" id="startbutton" onclick="startGame()">Start</button>
+      <button class="jackobutton" id="infobutton" onclick="clickInfo()">Info</button>
+    </div>
 	
-	<!-- Info Area -->
-		<div id="infoArea" class="infoScreen" style="display: none;">
-				<h2>Halloween Trivia</h2>
-				<p sytle="text-align: center;">This application is my first fron-scratch project and it is 
-					a submission for a Halloween challenge by W3 Schools. This application is not intended for publication or moneitization. 
-				</p>
-				<h3>Instructions</h3>
-				<ul>
-					<li>Score 7 correct answers or higher to get the "Good Ending"</li>
-					<li>Answering more than 3 questions incorrectly will result in the "Bad Ending"</li>
-				</ul>
-				<h3>Thank You</h3>
-				<ul> 
-					<li><a href="https://www.w3schools.com" target="_blank">W3 Schools</a> for hosting this challenge and their great learning resources</li>
-					<li><a href="https://www.webdevsimplified.com" target="_blank">Web Dev Simplified</a> for a great structure and community</li>
-					<li><a href="https://www.sololearn.com" target="_blank">SoloLearn</a> for helping me build a good foundation</li> 
-					<li>My friend <a href="https://github.com/ethqnit" target="_blank">Nate</a> for brainstorming functionality and giving recommendations</li>
-				</ul>
-				<button onclick="closeInfo()">Back</button>	
-		</div>
+  <!-- Info Area -->
+    <div id="infoArea" class="infoScreen" style="display: none;">
+      <h2>Halloween Trivia</h2>
+        <p sytle="text-align: center;">This application is my first fron-scratch project and it is 
+        a submission for a Halloween challenge by W3 Schools. This application is not intended for 
+	publication or moneitization.</p> 
 
-	<!-- Question Selection -->
-		<div id="gameArea" class="questionbox" style="display: none;">
+      <h3>Instructions</h3>
+      <ul>
+	<li>Score 7 correct answers or higher to get the "Good Ending"</li>
+	<li>Answering more than 3 questions incorrectly will result in the "Bad Ending"</li>
+      </ul>
+
+      <h3>Thank You</h3>
+      <ul> 
+	<li><a href="https://www.w3schools.com" target="_blank">W3 Schools</a> for hosting this challenge and their great learning resources</li>
+	<li><a href="https://www.webdevsimplified.com" target="_blank">Web Dev Simplified</a> for a great structure and community</li>
+	<li><a href="https://www.sololearn.com" target="_blank">SoloLearn</a> for helping me build a good foundation</li> 
+	<li>My friend <a href="https://github.com/ethqnit" target="_blank">Nate</a> for brainstorming functionality and giving recommendations</li>
+      </ul>
+				
+      <button onclick="closeInfo()">Back</button>	
+    </div>
+
+  <!-- Question Selection -->
+    <div id="gameArea" class="questionbox" style="display: none;">
 		
-			<div class="questionarea">
-				<h2 id="headerQ">Question Number</h2>
-				<p id="content">Question Text</p>
-			</div>
+      <div class="questionarea">
+	<h2 id="headerQ">Question Number</h2>
+	<p id="content">Question Text</p>
+      </div>
 			
-			<div class="answerarea">
-				<button id="op1" class="selectionFalse" onclick="select1()">Option 1</button>
-				<button id="op2" class="selectionFalse" onclick="select2()">Option 2</button>
-				<button id="op3" class="selectionFalse" onclick="select3()">Option 3</button>
-				<button id="op4" class="selectionFalse" onclick="select4()">Option 4</button>
-			</div>
+      <div class="answerarea">
+	<button id="op1" class="selectionFalse" onclick="select1()">Option 1</button>
+	<button id="op2" class="selectionFalse" onclick="select2()">Option 2</button>
+	<button id="op3" class="selectionFalse" onclick="select3()">Option 3</button>
+	<button id="op4" class="selectionFalse" onclick="select4()">Option 4</button>
+      </div>
 			
-			<button id="submitA" class="submitA" onClick="submitA()">Submit</button>
-			<button id="nextQ" class="nextQ" onClick="nextQ()">Next</button>
+      <button id="submitA" class="submitA" onClick="submitA()">Submit</button>
+      <button id="nextQ" class="nextQ" onClick="nextQ()">Next</button>
 						
-		</div>
+    </div>
 		
-	<!-- Good Ending Screen -->
-		<div id="endAreaGood" class="goodEndAnimated" style="display: none;">
+  <!-- Good Ending Screen -->
+    <div id="endAreaGood" class="goodEndAnimated" style="display: none;">
 		
-			<h2>Results</h2>
+    <h2>Results</h2>
 			
-			<div id="results" class="results">
-				<div id ="correctNum"></div>
-			</div>
-			
-			<div style="margin-left: auto; margin-right: auto; width: 30%; margin-top: 10%;">
-				<button class="jackobutton" onclick="resetGame()">Reset Game?</button>
-			</div>
-		
-		</div>
-	<!-- Bad Ending Screen -->
-		<div id="endAreaBad" class="badEndAnimated" style="display: none;">
-		
-			<h2>Results</h2>
-			
-			<div id="results" class="results">
-				<div id ="correctNumBad"></div>
-			</div>
-			
-			<div style="margin-left: auto; margin-right: auto; width: 30%; margin-top: 10%;">
-				<button class="jackobutton" onclick="resetGame()">Reset Game?</button>
-			</div>
-		
-		</div>
+    <div id="results" class="results">
+      <div id ="correctNum"></div>
+    </div>
 
-	<!-- Audio Sources -->
-		<audio id="music">
-			<source src="audio/start-animation.mp3" type="audio/mpeg">
-		</audio>
+    <div style="margin-left: auto; margin-right: auto; width: 30%; margin-top: 10%;">
+      <button class="jackobutton" onclick="resetGame()">Reset Game?</button>
+    </div>
+		
+  </div>
+	  
+  <!-- Bad Ending Screen -->
+  <div id="endAreaBad" class="badEndAnimated" style="display: none;">
+		
+  <h2>Results</h2>
+			
+  <div id="results" class="results">
+    <div id ="correctNumBad"></div>
+  </div>
+			
+  <div style="margin-left: auto; margin-right: auto; width: 30%; margin-top: 10%;">
+    <button class="jackobutton" onclick="resetGame()">Reset Game?</button>
+  </div>
+		
+</div>
 
-		<audio id="wrong">
-			<source src="audio/wrong-answer.mp3" type="audio/mpeg">
-		</audio>
+<!-- Audio Sources -->
+  <audio id="music">
+    <source src="audio/start-animation.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="wrong">
+    <source src="audio/wrong-answer.mp3" type="audio/mpeg">
+  </audio>
 	
-		<audio id="q1Correct">
-			<source src="audio/q1Correct.mp3" type="audio/mpeg">
-		</audio>
+  <audio id="q1Correct">
+    <source src="audio/q1Correct.mp3" type="audio/mpeg">
+  </audio>
 
-		<audio id="q2Correct">
-			<source src="audio/q2Correct.mp3" type="audio/mpeg">
-		</audio>
+  <audio id="q2Correct">
+    <source src="audio/q2Correct.mp3" type="audio/mpeg">
+  </audio>
 
-		<audio id="q3Correct">
-			<source src="audio/q3Correct.mp3" type="audio/mpeg">
-		</audio>
+  <audio id="q3Correct">
+    <source src="audio/q3Correct.mp3" type="audio/mpeg">
+  </audio>
 
-		<audio id="q4Correct">
-			<source src="audio/q4Correct.mp3" type="audio/mpeg">
-		</audio>
+  <audio id="q4Correct">
+    <source src="audio/q4Correct.mp3" type="audio/mpeg">
+  </audio>
 
-		<audio id="q5Correct">
-			<source src="audio/q5Correct.mp3" type="audio/mpeg">
-		</audio>
+  <audio id="q5Correct">
+    <source src="audio/q5Correct.mp3" type="audio/mpeg">
+  </audio>
 
-		<audio id="q6Correct">
-			<source src="audio/q6Correct.mp3" type="audio/mpeg">
-		</audio>
+  <audio id="q6Correct">
+    <source src="audio/q6Correct.mp3" type="audio/mpeg">
+  </audio>
 
-		<audio id="q7Correct">
-			<source src="audio/q7Correct.mp3" type="audio/mpeg">
-		</audio>
+  <audio id="q7Correct">
+    <source src="audio/q7Correct.mp3" type="audio/mpeg">
+  </audio>
 
-		<audio id="q8Correct">
-			<source src="audio/q8Correct.mp3" type="audio/mpeg">
-		</audio>
+  <audio id="q8Correct">
+    <source src="audio/q8Correct.mp3" type="audio/mpeg">
+  </audio>
 
-		<audio id="q9Correct">
-			<source src="audio/q9Correct.mp3" type="audio/mpeg">
-		</audio>
+  <audio id="q9Correct">
+    <source src="audio/q9Correct.mp3" type="audio/mpeg">
+  </audio>
 
-		<audio id="q10Correct">
-			<source src="audio/q10Correct.mp3" type="audio/mpeg">
-		</audio>
+  <audio id="q10Correct">
+    <source src="audio/q10Correct.mp3" type="audio/mpeg">
+  </audio>
 	
-		<audio id="goodEnd">
-			<source src="audio/good-end.mp3" type="audio/mpeg">
-		</audio>
+  <audio id="goodEnd">
+    <source src="audio/good-end.mp3" type="audio/mpeg">
+  </audio>
 
-		<audio id="badEnd">
-			<source src="audio/bad-end.mp3" type="audio/mpeg">
-		</audio>
+  <audio id="badEnd">
+    <source src="audio/bad-end.mp3" type="audio/mpeg">
+  </audio>
 		
-		<script type="text/javascript" src="script.js"></script>
-	
-	</body>
+  <script type="text/javascript" src="script.js"></script>
+
+  </body>
 	
 </html>
