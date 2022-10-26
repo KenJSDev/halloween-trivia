@@ -162,15 +162,15 @@ function startGame()
     document.getElementById("infobutton").style.display = "none";
   }
 
-	// Set question.id and correct to 0 to ensure that the score is reset
-	question.id = 0;
-	correct = 0;
+    // Set question.id and correct to 0 to ensure that the score is reset
+    question.id = 0;
+    correct = 0;
 
-	// Pulls the first question to start the game
-	nextQ();
+    // Pulls the first question to start the game
+    nextQ();
 
-	// Console information for debugging 
-	console.log("startGame() ", "Scoring System Logging: ", question.id, correct, animation);
+    // Console information for debugging 
+    console.log("startGame() ", "Scoring System Logging: ", question.id, correct, animation);
 }
 
 /**************** Reset Game *****************/
@@ -667,244 +667,275 @@ function submitA()
     document.getElementById("content").innerHTML = "Ben Tramer was mistaken for Michael, but was killed by a cop who did not see him crossing the road.";
     op2.className = "selectionWrong";
   }
-// LEFT OFF HERE FOR CLEAN UP ----------------------------*************************************************************
-  if (question.id == 2 && selected3 == true) {
-		wrongSound();
-		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Corey Cunningham is accused of being like Michael, but is not killed due to being mistaken as him.";
-		op3.className = "selectionWrong";
-	}
 
-	if (question.id == 2 && selected4 == true) {
-		wrongSound();
-		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Mr. Tavoli took his own life after being mistaken as Michael.";
-		op4.className = "selectionWrong";
-	}
-// *****************
-	if (question.id == 3 && selected4 == true) {
-		correct++;
-		q3Correct();
-		document.getElementById("headerQ").innerHTML = "Correct"
-		document.getElementById("content").innerHTML = "The Cult of Thorn had Danny Strode targeted as the next Shape, seemingly after Myers would kill baby Stephen.";
-	}
+  if (question.id == 2 && selected3 == true) 
+  {
+    wrongSound();
+    document.getElementById("headerQ").innerHTML = "Wrong"
+    document.getElementById("content").innerHTML = "Corey Cunningham is accused of being like Michael, but is not killed due to being mistaken as him.";
+    op3.className = "selectionWrong";
+  }
 
-	if (question.id == 3 && selected1 == true) {
-		wrongSound();
-		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Jamie Lloyd was seemingly set up to be the next Shape, but she is Michael's niece.";
-		op1.className = "selectionWrong";
-	}
+  if (question.id == 2 && selected4 == true) 
+  {
+    wrongSound();
+    document.getElementById("headerQ").innerHTML = "Wrong"
+    document.getElementById("content").innerHTML = "Mr. Tavoli took his own life after being mistaken as Michael.";
+    op4.className = "selectionWrong";
+  }
 
-	if (question.id == 3 && selected2 == true) {
-		wrongSound();
-		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Corey Cunningham wasn't introduced until Halloween Ends in 2022.";
-		op2.className = "selectionWrong";
-	}
+  if (question.id == 3 && selected4 == true) 
+  {
+    correct++;
+    q3Correct();
+    document.getElementById("headerQ").innerHTML = "Correct"
+    document.getElementById("content").innerHTML = "The Cult of Thorn had Danny Strode targeted as the next Shape, seemingly after Myers would kill baby Stephen.";
+  }
 
-	if (question.id == 3 && selected3 == true) {
-		wrongSound();
-		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "'The Man in Black' first appeared in Halloween 5, but had always been an ally or keeper of The Shape.";
-		op3.className = "selectionWrong";
-	}
-// *****************
-	if (question.id == 4 && selected2 == true) {
-		correct++;
-		q4Correct();
-		document.getElementById("headerQ").innerHTML = "Correct"
-		document.getElementById("content").innerHTML = "Laurie kisses Michael and says she'll see him in hell before falling to hear death.";
-	}
+  if (question.id == 3 && selected1 == true) {
+    wrongSound();
+    document.getElementById("headerQ").innerHTML = "Wrong"
+    document.getElementById("content").innerHTML = "Jamie Lloyd was seemingly set up to be the next Shape, but she is Michael's niece.";
+    op1.className = "selectionWrong";
+  }
 
-	if (question.id == 4 && selected1 == true) {
-		wrongSound();
-		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Laurie says 'Happy Halloween, Michael' in Halloween 2018.";
-		op1.className = "selectionWrong";
-	}
+  if (question.id == 3 && selected2 == true) {
+    wrongSound();
+    document.getElementById("headerQ").innerHTML = "Wrong"
+    document.getElementById("content").innerHTML = "Corey Cunningham wasn't introduced until Halloween Ends in 2022.";
+    op2.className = "selectionWrong";
+  }
 
-	if (question.id == 4 && selected3 == true) {
-		wrongSound();
-		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "This is a quote from Happy Gilmore as he was fighting his own Boogeyman.";
-		op3.className = "selectionWrong";
-	}
+  if (question.id == 3 && selected3 == true) 
+  {
+    wrongSound();
+    document.getElementById("headerQ").innerHTML = "Wrong"
+    document.getElementById("content").innerHTML = "'The Man in Black' first appeared in Halloween 5, but had always been an ally or keeper of The Shape.";
+    op3.className = "selectionWrong";
+  }
 
-	if (question.id == 4 && selected4 == true) {
-		wrongSound();
-		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "The 'Last Halloween' line does appear in some trailers for Halloween Ends, but was not spoken by Laurie in Resurrection.";
-		op4.className = "selectionWrong";
-	}
-// *****************
-	if (question.id == 5 && selected4 == true) {
-		correct++;
-		q5Correct();
-		document.getElementById("headerQ").innerHTML = "Correct"
-		document.getElementById("content").innerHTML = "Loomis theorizes that druids who practiced Samhain were drvien by their own, unconscious darkness rather than an external, spiritual force.";
-	}
+  if (question.id == 4 && selected2 == true) 
+  {
+    correct++;
+    q4Correct();
+    document.getElementById("headerQ").innerHTML = "Correct"
+    document.getElementById("content").innerHTML = "Laurie kisses Michael and says she'll see him in hell before falling to hear death.";
+  }
 
-	if (question.id == 5 && selected1 == true) {
-		wrongSound();
-		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Runes are brought into the storyline in Halloween 5, but were not discussed in Halloween II.";
-		op1.className = "selectionWrong";
-	}
+  if (question.id == 4 && selected1 == true) {
+    wrongSound();
+    document.getElementById("headerQ").innerHTML = "Wrong"
+    document.getElementById("content").innerHTML = "Laurie says 'Happy Halloween, Michael' in Halloween 2018.";
+    op1.className = "selectionWrong";
+  }
 
-	if (question.id == 5 && selected2 == true) {
-		wrongSound();
-		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Loomis would later state in Halloween 5 that he prayed Michael would burn in Hell, but knew Hell would not have him. He doesn't blame Satan at any point.";
-		op2.className = "selectionWrong";
-	}
+  if (question.id == 4 && selected3 == true) 
+  {
+    wrongSound();
+    document.getElementById("headerQ").innerHTML = "Wrong"
+    document.getElementById("content").innerHTML = "This is a quote from Happy Gilmore as he was fighting his own Boogeyman.";
+    op3.className = "selectionWrong";
+  }
 
-	if (question.id == 5 && selected3 == true) {
-		wrongSound();
-		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Halloween II came out in 1981 AD / 35 BT (Before TikTok), so people did not talk like this at the time.";
-		op3.className = "selectionWrong";
-	}
-// *****************
-	if (question.id == 6 && selected1 == true) {
-		correct++;
-		q6Correct();
-		document.getElementById("headerQ").innerHTML = "Correct"
-		document.getElementById("content").innerHTML = "Jim feels that Michael Myers is the darkness inside us all. He gives an example of wanting to strangle an old woman for taking too long at checkout.";
-	}
+  if (question.id == 4 && selected4 == true) 
+  {
+    wrongSound();
+    document.getElementById("headerQ").innerHTML = "Wrong"
+    document.getElementById("content").innerHTML = "The 'Last Halloween' line does appear in some trailers for Halloween Ends, but was not spoken by Laurie in Resurrection.";
+    op4.className = "selectionWrong";
+  }
 
-	if (question.id == 6 && selected2 == true) {
-		wrongSound();
-		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Jim doesn't come across as somebody devoted to the Christian religion and likely wouldn't point toward the Anti-Christ.";
-		op2.className = "selectionWrong";
-	}
+  if (question.id == 5 && selected4 == true) 
+  {
+    correct++;
+    q5Correct();
+    document.getElementById("headerQ").innerHTML = "Correct"
+    document.getElementById("content").innerHTML = "Loomis theorizes that druids who practiced Samhain were drvien by their own, unconscious darkness rather than an external, spiritual force.";
+  }
 
-	if (question.id == 6 && selected3 == true) {
-		wrongSound();
-		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Jim has theories, but none of them revolve around a copy cat.";
-		op3.className = "selectionWrong";
-	}
+  if (question.id == 5 && selected1 == true) 
+  {
+    wrongSound();
+    document.getElementById("headerQ").innerHTML = "Wrong"
+    document.getElementById("content").innerHTML = "Runes are brought into the storyline in Halloween 5, but were not discussed in Halloween II.";
+    op1.className = "selectionWrong";
+  }
 
-	if (question.id == 6 && selected4 == true) {
-		wrongSound();
-		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "While there are some indications Michael was abused, these revelations did not yet occur and would later be revealed to be part of the 'Dangertainment' show.";
-		op4.className = "selectionWrong";
-	}
-// *****************
-	if (question.id == 7 && selected2 == true) {
-		correct++;
-		q7Correct();
-		document.getElementById("headerQ").innerHTML = "Correct"
-		document.getElementById("content").innerHTML = "Michael Myers had no interest in pursuing Laurie Strode. Sartain drove him to pursue Laurie both literally and figuratively.";
-	}
+  if (question.id == 5 && selected2 == true) 
+  {
+    wrongSound();
+    document.getElementById("headerQ").innerHTML = "Wrong"
+    document.getElementById("content").innerHTML = "Loomis would later state in Halloween 5 that he prayed Michael would burn in Hell, but knew Hell would not have him. He doesn't blame Satan at any point.";
+    op2.className = "selectionWrong";
+  }
 
-	if (question.id == 7 && selected1 == true) {
-		wrongSound();
-		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "There is no strong indication that Michael is concerned with revenge. Each battle with Laurie is circumstantial.";
-		op1.className = "selectionWrong";
-	}
+  if (question.id == 5 && selected3 == true) 
+  {
+    wrongSound();
+    document.getElementById("headerQ").innerHTML = "Wrong"
+    document.getElementById("content").innerHTML = "Halloween II came out in 1981 AD / 35 BT (Before TikTok), so people did not talk like this at the time.";
+    op3.className = "selectionWrong";
+  }
 
-	if (question.id == 7 && selected3 == true) {
-		wrongSound();
-		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "The concept of Michael being driven by an evil force of sorts is explored in Ends, but not credited for Michael.";
-		op3.className = "selectionWrong";
-	}
+  if (question.id == 6 && selected1 == true) 
+  {
+    correct++;
+    q6Correct();
+    document.getElementById("headerQ").innerHTML = "Correct"
+    document.getElementById("content").innerHTML = "Jim feels that Michael Myers is the darkness inside us all. He gives an example of wanting to strangle an old woman for taking too long at checkout.";
+  }
 
-	if (question.id == 7 && selected4 == true) {
-		wrongSound();
-		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "The Curse storyline is explored in Halloween 5 and 6, neither of which are considered cannonical in the 2018 timeline.";
-		op4.className = "selectionWrong";
-	}
-// *****************
-	if (question.id == 8 && selected1 == true) {
-		correct++;
-		q8Correct();
-		document.getElementById("headerQ").innerHTML = "Correct"
-		document.getElementById("content").innerHTML = "Jamie Lee Curtis made up a song to sing during filming of the original film so they wouldn't need the rights. This song plays both in the film and during the credits.";
-	}
+  if (question.id == 6 && selected2 == true) 
+  {
+    wrongSound();
+    document.getElementById("headerQ").innerHTML = "Wrong"
+    document.getElementById("content").innerHTML = "Jim doesn't come across as somebody devoted to the Christian religion and likely wouldn't point toward the Anti-Christ.";
+    op2.className = "selectionWrong";
+  }
 
-	if (question.id == 8 && selected2 == true) {
-		wrongSound();
-		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "'Until It Sleeps' is a song by Metalica about battling personal demons.";
-		op2.className = "selectionWrong";
-	}
+  if (question.id == 6 && selected3 == true) 
+  {
+    wrongSound();
+    document.getElementById("headerQ").innerHTML = "Wrong"
+    document.getElementById("content").innerHTML = "Jim has theories, but none of them revolve around a copy cat.";
+    op3.className = "selectionWrong";
+  }
 
-	if (question.id == 8 && selected3 == true) {
-		wrongSound();
-		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "'Haunted Head' is a song by Mark Crozer, who performed WWE Superstar Bray Wyatt's original theme.";
-		op3.className = "selectionWrong";
-	}
+  if (question.id == 6 && selected4 == true) 
+  {
+    wrongSound();
+    document.getElementById("headerQ").innerHTML = "Wrong"
+    document.getElementById("content").innerHTML = "While there are some indications Michael was abused, these revelations did not yet occur and would later be revealed to be part of the 'Dangertainment' show.";
+    op4.className = "selectionWrong";
+  }
 
-	if (question.id == 8 && selected4 == true) {
-		wrongSound();
-		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "'Man Behind the Mask' is a song written and performed by Alice Cooper for the Friday the 13th: Part IV film.";
-		op4.className = "selectionWrong";
-	}
-// *****************
-	if (question.id == 9 && selected2 == true) {
-		correct++;
-		q9Correct();
-		document.getElementById("headerQ").innerHTML = "Correct"
-		document.getElementById("content").innerHTML = "Tommy hears a young girl claim that it's raining red. In the Producer's Cut, she sings the lines.";
-	}
+  if (question.id == 7 && selected2 == true) 
+  {
+    correct++;
+    q7Correct();
+    document.getElementById("headerQ").innerHTML = "Correct"
+    document.getElementById("content").innerHTML = "Michael Myers had no interest in pursuing Laurie Strode. Sartain drove him to pursue Laurie both literally and figuratively.";
+  }
 
-	if (question.id == 9 && selected1 == true) {
-		wrongSound();
-		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "John Strode heard thumping coming from the dryer, where he found the remains of his wife Debra.";
-		op1.className = "selectionWrong";
-	}
+  if (question.id == 7 && selected1 == true) 
+  {
+    wrongSound();
+    document.getElementById("headerQ").innerHTML = "Wrong"
+    document.getElementById("content").innerHTML = "There is no strong indication that Michael is concerned with revenge. Each battle with Laurie is circumstantial.";
+    op1.className = "selectionWrong";
+  }
 
-	if (question.id == 9 && selected3 == true) {
-		wrongSound();
-		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Passing out on the car horn is a trope in multiple Halloween films, but it wasn't a car horn that lead Tommy to Barry's body.";
-		op3.className = "selectionWrong";
-	}
+  if (question.id == 7 && selected3 == true) 
+  {
+    wrongSound();
+    document.getElementById("headerQ").innerHTML = "Wrong"
+    document.getElementById("content").innerHTML = "The concept of Michael being driven by an evil force of sorts is explored in Ends, but not credited for Michael.";
+    op3.className = "selectionWrong";
+  }
 
-	if (question.id == 9 && selected4 == true) {
-		wrongSound();
-		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Tommy either didn't see it happen or he was really good at pretending he didn't.";
-		op4.className = "selectionWrong";
-	}
-// *****************
-	if (question.id == 10 && selected2 == true) {
-		correct++;
-		q10Correct();
-		document.getElementById("headerQ").innerHTML = "Correct"
-		document.getElementById("content").innerHTML = "Charlie Bowles killed his family about 15 years before 1978. His story is expanded on in the graphic novel 'Halloween: Nightdance.'";
-	}
+  if (question.id == 7 && selected4 == true) 
+  {
+    wrongSound();
+    document.getElementById("headerQ").innerHTML = "Wrong"
+    document.getElementById("content").innerHTML = "The Curse storyline is explored in Halloween 5 and 6, neither of which are considered cannonical in the 2018 timeline.";
+    op4.className = "selectionWrong";
+  }
 
-	if (question.id == 10 && selected1 == true) {
-		wrongSound();
-		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Corey Cunningham had not been born when Michael killed Judith.";
-		op1.className = "selectionWrong";
-	}
+  if (question.id == 8 && selected1 == true) 
+  {
+    correct++;
+    q8Correct();
+    document.getElementById("headerQ").innerHTML = "Correct"
+    document.getElementById("content").innerHTML = "Jamie Lee Curtis made up a song to sing during filming of the original film so they wouldn't need the rights. This song plays both in the film and during the credits.";
+  }
 
-	if (question.id == 10 && selected3 == true) {
-		wrongSound();
-		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Sam Loomis is Dr. Loomis' name, which is a reference to one of the protagonists in Psycho who goes by the same name.";
-		op3.className = "selectionWrong";
-	}
+  if (question.id == 8 && selected2 == true) 
+  {
+    wrongSound();
+    document.getElementById("headerQ").innerHTML = "Wrong"
+    document.getElementById("content").innerHTML = "'Until It Sleeps' is a song by Metalica about battling personal demons.";
+    op2.className = "selectionWrong";
+  }
 
-	if (question.id == 10 && selected4 == true) {
-		wrongSound();
-		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Elias Voorhees is the name of Jason Voorhees' father and has nothing to do with Halloween.";
-		op4.className = "selectionWrong";
-	}
+  if (question.id == 8 && selected3 == true) 
+  {
+    wrongSound();
+    document.getElementById("headerQ").innerHTML = "Wrong"
+    document.getElementById("content").innerHTML = "'Haunted Head' is a song by Mark Crozer, who performed WWE Superstar Bray Wyatt's original theme.";
+    op3.className = "selectionWrong";
+  }
+
+  if (question.id == 8 && selected4 == true) 
+  {
+    wrongSound();
+    document.getElementById("headerQ").innerHTML = "Wrong"
+    document.getElementById("content").innerHTML = "'Man Behind the Mask' is a song written and performed by Alice Cooper for the Friday the 13th: Part IV film.";
+    op4.className = "selectionWrong";
+  }
+
+  if (question.id == 9 && selected2 == true) 
+  {
+    correct++;
+    q9Correct();
+    document.getElementById("headerQ").innerHTML = "Correct"
+    document.getElementById("content").innerHTML = "Tommy hears a young girl claim that it's raining red. In the Producer's Cut, she sings the lines.";
+  }
+
+  if (question.id == 9 && selected1 == true) 
+  {
+    wrongSound();
+    document.getElementById("headerQ").innerHTML = "Wrong"
+    document.getElementById("content").innerHTML = "John Strode heard thumping coming from the dryer, where he found the remains of his wife Debra.";
+    op1.className = "selectionWrong";
+  }
+
+  if (question.id == 9 && selected3 == true) 
+  {
+    wrongSound();
+    document.getElementById("headerQ").innerHTML = "Wrong"
+    document.getElementById("content").innerHTML = "Passing out on the car horn is a trope in multiple Halloween films, but it wasn't a car horn that lead Tommy to Barry's body.";
+    op3.className = "selectionWrong";
+  }
+
+  if (question.id == 9 && selected4 == true) 
+  {
+    wrongSound();
+    document.getElementById("headerQ").innerHTML = "Wrong"
+    document.getElementById("content").innerHTML = "Tommy either didn't see it happen or he was really good at pretending he didn't.";
+    op4.className = "selectionWrong";
+  }
+
+  if (question.id == 10 && selected2 == true) 
+  {
+    correct++;
+    q10Correct();
+    document.getElementById("headerQ").innerHTML = "Correct"
+    document.getElementById("content").innerHTML = "Charlie Bowles killed his family about 15 years before 1978. His story is expanded on in the graphic novel 'Halloween: Nightdance.'";
+  }
+
+  if (question.id == 10 && selected1 == true) 
+  {
+    wrongSound();
+    document.getElementById("headerQ").innerHTML = "Wrong"
+    document.getElementById("content").innerHTML = "Corey Cunningham had not been born when Michael killed Judith.";
+    op1.className = "selectionWrong";
+  }
+
+  if (question.id == 10 && selected3 == true) 
+  {
+    wrongSound();
+    document.getElementById("headerQ").innerHTML = "Wrong"
+    document.getElementById("content").innerHTML = "Sam Loomis is Dr. Loomis' name, which is a reference to one of the protagonists in Psycho who goes by the same name.";
+    op3.className = "selectionWrong";
+  }
+
+  if (question.id == 10 && selected4 == true) 
+  {
+    wrongSound();
+    document.getElementById("headerQ").innerHTML = "Wrong"
+    document.getElementById("content").innerHTML = "Elias Voorhees is the name of Jason Voorhees' father and has nothing to do with Halloween.";
+    op4.className = "selectionWrong";
+  }
 
 	console.log("submitA Function Called", "question.id: ", question.id, 
 	"correct: ", correct);
