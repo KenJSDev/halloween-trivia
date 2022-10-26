@@ -210,8 +210,7 @@ Option Functions
 function select1() 
 {
   if (op1.className == "selectionFalse") 
-  {
-			
+  {			
     selected1 = true;
     selected2 = false; 
     selected3 = false; 
@@ -265,129 +264,127 @@ function select3()
   }
 }
 // PICK UP CODE CLEAN UP / INDENT EFFORTS HERE
-		function select4() {
+function select4() 
+{
+  if (op4.className == "selectionFalse") 
+  {
+    document.getElementById("op1").className = "selectionFalse";
+    document.getElementById("op2").className = "selectionFalse";
+    document.getElementById("op3").className = "selectionFalse";
+    document.getElementById("op4").className = "selectionTrue";
+    document.getElementById("submitA").disabled = false;
 
-		if (op4.className == "selectionFalse") {
-		document.getElementById("op1").className = "selectionFalse";
-		document.getElementById("op2").className = "selectionFalse";
-		document.getElementById("op3").className = "selectionFalse";
-		document.getElementById("op4").className = "selectionTrue";
-		document.getElementById("submitA").disabled = false;
-
-		selected1 = false;
-		selected2 = false; 
-		selected3 = false; 
-		selected4 = true;
+    selected1 = false;
+    selected2 = false; 
+    selected3 = false; 
+    selected4 = true;
 	
-		console.log("Option 4 Selected");
-		}
-	}
+    console.log("Option 4 Selected");
+  }
+}
 
 /**************** Begin Questions *****************/
 // Sets question content which will be pulled by the nextQ function based on the "id"
 let question = [
-	{
-		id: 1,
-		headerQ: "Question 1",
-		content: "In Halloween 1978, who does Lynda suggest is the driver of the Smith's Grove company car?",
-		op1: "Ben Tramer",
-		op2: "Tommy Doyle", 
-		op3: "Devon Graham", //correct
-		op4: "Tommy Jarvis"
+  {
+    id: 1,
+    headerQ: "Question 1",
+    content: "In Halloween 1978, who does Lynda suggest is the driver of the Smith's Grove company car?",
+    op1: "Ben Tramer",
+    op2: "Tommy Doyle", 
+    op3: "Devon Graham", //correct
+    op4: "Tommy Jarvis"
+  },
 
-	},
-// *****************
-	{
-		id: 2,
-		headerQ: "Question 2",
-		content: "Who was the first person to be killed for being mistaken as Michael Myers?",
-		op1: "Ted Hollister", //correct
-		op2: "Ben Tramer",
-		op3: "Corey Cunningham",
-		op4: "Mr. Tivoli"
-	},
-// *****************
-	{
-		id: 3,
-		headerQ: "Question 3",
-		content: "Who is teased as Michael's first succesor that is NOT a relative of his?",
-		op1: "Jamie Lloyd",
-		op2: "Corey Cunningham",
-		op3: "The Man in Black",
-		op4: "Danny Strode" // correct
-	},
+  {
+    id: 2,
+    headerQ: "Question 2",
+    content: "Who was the first person to be killed for being mistaken as Michael Myers?",
+    op1: "Ted Hollister", //correct
+    op2: "Ben Tramer",
+    op3: "Corey Cunningham",
+    op4: "Mr. Tivoli"
+  },
 
-// *****************
-	{
-		id: 4,
-		headerQ: "Question 4",
-		content: "What are Laurie's last words to Michael in Halloween Resurrection?",
-		op1: "Happy Halloween, Michael",
-		op2: "I'll see you in Hell", // correct
-		op3: "The Price is Wrong, Bitc!",
-		op4: "It's your last Halloween" 
-	},
+  {
+    id: 3,
+    headerQ: "Question 3",
+    content: "Who is teased as Michael's first succesor that is NOT a relative of his?",
+    op1: "Jamie Lloyd",
+    op2: "Corey Cunningham",
+    op3: "The Man in Black",
+    op4: "Danny Strode" // correct
+  },
 
-// *****************
-	{
-		id: 5,
-		headerQ: "Question 5",
-		content: "In Halloween II, Dr. Loomis theorized that the feast of Samhain is not about ghosts or goblins, but about what?",
-		op1: "A Runic Celebration",
-		op2: "Satanic Worship",
-		op3: "A Party that is Lit",
-		op4: "The Unconscious Mind" // correct
-	},
-// *****************
-	{
-		id: 6,
-		headerQ: "Question 6",
-		content: "In Halloween Resurrection, Jim also has a theory regarding Michael Myers and the unconscious mind. Who does he think Michael is?",
-		op1: "All of Us", //correct
-		op2: "The Anti-Christ",
-		op3: "A Copycat Killer",
-		op4: "A tortured soul"
-	},
-// *****************
-	{
-		id: 7,
-		headerQ: "Question 7",
-		content: "What drove Michael to go after Laurie Strode in 2018?",
-		op1: "Revenge",
-		op2: "Dr. Sartain", // correct
-		op3: "'The Evil'",
-		op4: "A Curse" 
-	},
-// *****************
-	{
-		id: 8,
-		headerQ: "Question 8",
-		content: "In Halloween 2018, a song was written specifically to reference a scene in 1978. What is the title?",
-		op1: "Close To Me", // correct
-		op2: "Until It Sleeps",
-		op3: "Haunted Head",
-		op4: "Man Behind the Mask"
-	},
-// *****************
-	{
-		id: 9,
-		headerQ: "Question 9",
-		content: "Before we got 'Willy the Kid' in Halloween Ends, we got 'Barry Sims' in Halloween 6. What lead Tommy to discover Barry's body?",
-		op1: "Thumping from the Basement",
-		op2: "Little Girl dancing in Blood", // correct
-		op3: "A Car Horn",
-		op4: "Tommy Saw it Happen"
-	},
-// *****************
-	{
-		id: 10,
-		headerQ: "Question 10",
-		content: "Who in the Halloween Universe murdered his family around the same time period Michael killed Judith?",
-		op1: "Corey Cunningham",
-		op2: "Charlie Bowles", // correct
-		op3: "Sam Loomis",
-		op4: "Elias Voorhees" 
-	}
+  {
+    id: 4,
+    headerQ: "Question 4",
+    content: "What are Laurie's last words to Michael in Halloween Resurrection?",
+    op1: "Happy Halloween, Michael",
+    op2: "I'll see you in Hell", // correct
+    op3: "The Price is Wrong, Bitc!",
+    op4: "It's your last Halloween" 
+  },
+
+  {
+    id: 5,
+    headerQ: "Question 5",
+    content: "In Halloween II, Dr. Loomis theorized that the feast of Samhain is not about ghosts or goblins, but about what?",
+    op1: "A Runic Celebration",
+    op2: "Satanic Worship",
+    op3: "A Party that is Lit",
+    op4: "The Unconscious Mind" // correct
+  },
+
+  {
+    id: 6,
+    headerQ: "Question 6",
+    content: "In Halloween Resurrection, Jim also has a theory regarding Michael Myers and the unconscious mind. Who does he think Michael is?",
+    op1: "All of Us", //correct
+    op2: "The Anti-Christ",
+    op3: "A Copycat Killer",
+    op4: "A tortured soul"
+  },
+
+  {
+    id: 7,
+    headerQ: "Question 7",
+    content: "What drove Michael to go after Laurie Strode in 2018?",
+    op1: "Revenge",
+    op2: "Dr. Sartain", // correct
+    op3: "'The Evil'",
+    op4: "A Curse" 
+  },
+
+  {
+    id: 8,
+    headerQ: "Question 8",
+    content: "In Halloween 2018, a song was written specifically to reference a scene in 1978. What is the title?",
+    op1: "Close To Me", // correct
+    op2: "Until It Sleeps",
+    op3: "Haunted Head",
+    op4: "Man Behind the Mask"
+  },
+
+  {
+    id: 9,
+    headerQ: "Question 9",
+    content: "Before we got 'Willy the Kid' in Halloween Ends, we got 'Barry Sims' in Halloween 6. What lead Tommy to discover Barry's body?",
+    op1: "Thumping from the Basement",
+    op2: "Little Girl dancing in Blood", // correct
+    op3: "A Car Horn",
+    op4: "Tommy Saw it Happen"
+  },
+
+  {
+    id: 10,
+    headerQ: "Question 10",
+    content: "Who in the Halloween Universe murdered his family around the same time period Michael killed Judith?",
+    op1: "Corey Cunningham",
+    op2: "Charlie Bowles", // correct
+    op3: "Sam Loomis",
+    op4: "Elias Voorhees" 
+  }
 ]
 
 /**************** nextQ() *****************/
@@ -396,202 +393,216 @@ let question = [
 // When question.id hits 11, the End Screen is populated
 function nextQ() {
 
-question.id++;
-document.getElementById("nextQ").disabled = true; 
-document.getElementById("submitA").disabled = true;
-document.getElementById("op1").disabled = false;
-document.getElementById("op2").disabled = false;
-document.getElementById("op3").disabled = false;
-document.getElementById("op4").disabled = false;
+  question.id++;
+  document.getElementById("nextQ").disabled = true; 
+  document.getElementById("submitA").disabled = true;
+  document.getElementById("op1").disabled = false;
+  document.getElementById("op2").disabled = false;
+  document.getElementById("op3").disabled = false;
+  document.getElementById("op4").disabled = false;
 
-if (question.id == 1) {
-	document.getElementById("headerQ").innerHTML = question[0].headerQ;
-	document.getElementById("content").innerHTML = question[0].content;
-	document.getElementById("op1").innerHTML = question[0].op1;
-	document.getElementById("op2").innerHTML = question[0].op2;
-	document.getElementById("op3").innerHTML = question[0].op3;
-	document.getElementById("op4").innerHTML = question[0].op4;
+  if (question.id == 1) 
+  {
+    document.getElementById("headerQ").innerHTML = question[0].headerQ;
+    document.getElementById("content").innerHTML = question[0].content;
+    document.getElementById("op1").innerHTML = question[0].op1;
+    document.getElementById("op2").innerHTML = question[0].op2;
+    document.getElementById("op3").innerHTML = question[0].op3;
+    document.getElementById("op4").innerHTML = question[0].op4;
 
-	console.log("Question 1 Called", "question.id: ", question.id,  "correct: ", correct);
-}
+    console.log("Question 1 Called", "question.id: ", question.id,  "correct: ", correct);
+  }
+
+  if (question.id == 2) 
+  { 
+    document.getElementById("op1").className = "selectionFalse";
+    document.getElementById("op2").className = "selectionFalse";
+    document.getElementById("op3").className = "selectionFalse";
+    document.getElementById("op4").className = "selectionFalse"; 
+
+    document.getElementById("headerQ").innerHTML = question[1].headerQ;
+    document.getElementById("content").innerHTML = question[1].content;
+    document.getElementById("op1").innerHTML = question[1].op1;
+    document.getElementById("op2").innerHTML = question[1].op2;
+    document.getElementById("op3").innerHTML = question[1].op3;
+    document.getElementById("op4").innerHTML = question[1].op4;
+
+    console.log("Question 2 Called", "question.id: ", question.id,  "correct: ", correct);
+  }
+
+  if (question.id == 3) 
+  {
+    document.getElementById("op1").className = "selectionFalse";
+    document.getElementById("op2").className = "selectionFalse";
+    document.getElementById("op3").className = "selectionFalse";
+    document.getElementById("op4").className = "selectionFalse";
+
+    document.getElementById("headerQ").innerHTML = question[2].headerQ;
+    document.getElementById("content").innerHTML = question[2].content;
+    document.getElementById("op1").innerHTML = question[2].op1;
+    document.getElementById("op2").innerHTML = question[2].op2;
+    document.getElementById("op3").innerHTML = question[2].op3;
+    document.getElementById("op4").innerHTML = question[2].op4;
+
+    console.log("Question 3 Called", "question.id: ", question.id,  "correct: ", correct);
+  }
+
+  if (question.id == 4) 
+  {
+    document.getElementById("op1").className = "selectionFalse";
+    document.getElementById("op2").className = "selectionFalse";
+    document.getElementById("op3").className = "selectionFalse";
+    document.getElementById("op4").className = "selectionFalse";
+
+    document.getElementById("headerQ").innerHTML = question[3].headerQ;
+    document.getElementById("content").innerHTML = question[3].content;
+    document.getElementById("op1").innerHTML = question[3].op1;
+    document.getElementById("op2").innerHTML = question[3].op2;
+    document.getElementById("op3").innerHTML = question[3].op3;
+    document.getElementById("op4").innerHTML = question[3].op4;
+
+    console.log("Question 4 Called", "question.id: ", question.id,  "correct: ", correct);
+  }
+
+  if (question.id == 5) 
+  {
+    document.getElementById("op1").className = "selectionFalse";
+    document.getElementById("op2").className = "selectionFalse";
+    document.getElementById("op3").className = "selectionFalse";
+    document.getElementById("op4").className = "selectionFalse";
+
+    document.getElementById("headerQ").innerHTML = question[4].headerQ;
+    document.getElementById("content").innerHTML = question[4].content;
+    document.getElementById("op1").innerHTML = question[4].op1;
+    document.getElementById("op2").innerHTML = question[4].op2;
+    document.getElementById("op3").innerHTML = question[4].op3;
+    document.getElementById("op4").innerHTML = question[4].op4;
+
+    console.log("Question 5 Called", "question.id: ", question.id,  "correct: ", correct);
+  }
+
+  if (question.id == 6) 
+  {
+    document.getElementById("op1").className = "selectionFalse";
+    document.getElementById("op2").className = "selectionFalse";
+    document.getElementById("op3").className = "selectionFalse";
+    document.getElementById("op4").className = "selectionFalse";
+
+    document.getElementById("headerQ").innerHTML = question[5].headerQ;
+    document.getElementById("content").innerHTML = question[5].content;
+    document.getElementById("op1").innerHTML = question[5].op1;
+    document.getElementById("op2").innerHTML = question[5].op2;
+    document.getElementById("op3").innerHTML = question[5].op3;
+    document.getElementById("op4").innerHTML = question[5].op4;
+
+    console.log("Question 6 Called", "question.id: ", question.id,  "correct: ", correct);
+  }
 // *****************
-if (question.id == 2) {
-	document.getElementById("op1").className = "selectionFalse";
-	document.getElementById("op2").className = "selectionFalse";
-	document.getElementById("op3").className = "selectionFalse";
-	document.getElementById("op4").className = "selectionFalse"; 
+  if (question.id == 7) 
+  {
+    document.getElementById("op1").className = "selectionFalse";
+    document.getElementById("op2").className = "selectionFalse";
+    document.getElementById("op3").className = "selectionFalse";
+    document.getElementById("op4").className = "selectionFalse";
 
-	document.getElementById("headerQ").innerHTML = question[1].headerQ;
-	document.getElementById("content").innerHTML = question[1].content;
-	document.getElementById("op1").innerHTML = question[1].op1;
-	document.getElementById("op2").innerHTML = question[1].op2;
-	document.getElementById("op3").innerHTML = question[1].op3;
-	document.getElementById("op4").innerHTML = question[1].op4;
+    document.getElementById("headerQ").innerHTML = question[6].headerQ;
+    document.getElementById("content").innerHTML = question[6].content;
+    document.getElementById("op1").innerHTML = question[6].op1;
+    document.getElementById("op2").innerHTML = question[6].op2;
+    document.getElementById("op3").innerHTML = question[6].op3;
+    document.getElementById("op4").innerHTML = question[6].op4;
 
-	console.log("Question 2 Called", "question.id: ", question.id,  "correct: ", correct);
-	}
-// *****************
-if (question.id == 3) {
-	document.getElementById("op1").className = "selectionFalse";
-	document.getElementById("op2").className = "selectionFalse";
-	document.getElementById("op3").className = "selectionFalse";
-	document.getElementById("op4").className = "selectionFalse";
+    console.log("Question 7 Called", "question.id: ", question.id,  "correct: ", correct);
+  }
+	
+  if (question.id == 8) 
+  {
+    document.getElementById("op1").className = "selectionFalse";
+    document.getElementById("op2").className = "selectionFalse";
+    document.getElementById("op3").className = "selectionFalse";
+    document.getElementById("op4").className = "selectionFalse";
 
-	document.getElementById("headerQ").innerHTML = question[2].headerQ;
-	document.getElementById("content").innerHTML = question[2].content;
-	document.getElementById("op1").innerHTML = question[2].op1;
-	document.getElementById("op2").innerHTML = question[2].op2;
-	document.getElementById("op3").innerHTML = question[2].op3;
-	document.getElementById("op4").innerHTML = question[2].op4;
+    document.getElementById("headerQ").innerHTML = question[7].headerQ;
+    document.getElementById("content").innerHTML = question[7].content;
+    document.getElementById("op1").innerHTML = question[7].op1;
+    document.getElementById("op2").innerHTML = question[7].op2;
+    document.getElementById("op3").innerHTML = question[7].op3;
+    document.getElementById("op4").innerHTML = question[7].op4;
 
-	console.log("Question 3 Called", "question.id: ", question.id,  "correct: ", correct);
-	}
-// *****************
-if (question.id == 4) {
-	document.getElementById("op1").className = "selectionFalse";
-	document.getElementById("op2").className = "selectionFalse";
-	document.getElementById("op3").className = "selectionFalse";
-	document.getElementById("op4").className = "selectionFalse";
+    console.log("Question 8 Called", "question.id: ", question.id,  "correct: ", correct);
+  }
 
-	document.getElementById("headerQ").innerHTML = question[3].headerQ;
-	document.getElementById("content").innerHTML = question[3].content;
-	document.getElementById("op1").innerHTML = question[3].op1;
-	document.getElementById("op2").innerHTML = question[3].op2;
-	document.getElementById("op3").innerHTML = question[3].op3;
-	document.getElementById("op4").innerHTML = question[3].op4;
+  if (question.id == 9) 
+  {
+    document.getElementById("op1").className = "selectionFalse";
+    document.getElementById("op2").className = "selectionFalse";
+    document.getElementById("op3").className = "selectionFalse";
+    document.getElementById("op4").className = "selectionFalse";
 
-	console.log("Question 4 Called", "question.id: ", question.id,  "correct: ", correct);
-	}
-// *****************
-if (question.id == 5) {
-	document.getElementById("op1").className = "selectionFalse";
-	document.getElementById("op2").className = "selectionFalse";
-	document.getElementById("op3").className = "selectionFalse";
-	document.getElementById("op4").className = "selectionFalse";
+    document.getElementById("headerQ").innerHTML = question[8].headerQ;
+    document.getElementById("content").innerHTML = question[8].content;
+    document.getElementById("op1").innerHTML = question[8].op1;
+    document.getElementById("op2").innerHTML = question[8].op2;
+    document.getElementById("op3").innerHTML = question[8].op3;
+    document.getElementById("op4").innerHTML = question[8].op4;
+	  
+    console.log("Question 9 Called", "question.id: ", question.id,  "correct: ", correct);
+  }
 
-	document.getElementById("headerQ").innerHTML = question[4].headerQ;
-	document.getElementById("content").innerHTML = question[4].content;
-	document.getElementById("op1").innerHTML = question[4].op1;
-	document.getElementById("op2").innerHTML = question[4].op2;
-	document.getElementById("op3").innerHTML = question[4].op3;
-	document.getElementById("op4").innerHTML = question[4].op4;
+  if (question.id == 10) 
+  {
+    document.getElementById("op1").className = "selectionFalse";
+    document.getElementById("op2").className = "selectionFalse";
+    document.getElementById("op3").className = "selectionFalse";
+    document.getElementById("op4").className = "selectionFalse";
 
-	console.log("Question 5 Called", "question.id: ", question.id,  "correct: ", correct);
-	}
-// *****************
-if (question.id == 6) {
-	document.getElementById("op1").className = "selectionFalse";
-	document.getElementById("op2").className = "selectionFalse";
-	document.getElementById("op3").className = "selectionFalse";
-	document.getElementById("op4").className = "selectionFalse";
+    document.getElementById("headerQ").innerHTML = question[9].headerQ;
+    document.getElementById("content").innerHTML = question[9].content;
+    document.getElementById("op1").innerHTML = question[9].op1;
+    document.getElementById("op2").innerHTML = question[9].op2;
+    document.getElementById("op3").innerHTML = question[9].op3;
+    document.getElementById("op4").innerHTML = question[9].op4;
 
-	document.getElementById("headerQ").innerHTML = question[5].headerQ;
-	document.getElementById("content").innerHTML = question[5].content;
-	document.getElementById("op1").innerHTML = question[5].op1;
-	document.getElementById("op2").innerHTML = question[5].op2;
-	document.getElementById("op3").innerHTML = question[5].op3;
-	document.getElementById("op4").innerHTML = question[5].op4;
+    console.log("Question 10 Called", "question.id: ", question.id,  "correct: ", correct);
+  }
 
-	console.log("Question 6 Called", "question.id: ", question.id,  "correct: ", correct);
-	}
-// *****************
-if (question.id == 7) {
-	document.getElementById("op1").className = "selectionFalse";
-	document.getElementById("op2").className = "selectionFalse";
-	document.getElementById("op3").className = "selectionFalse";
-	document.getElementById("op4").className = "selectionFalse";
+  if (question.id == 11 && correct >= 7) 
+  {
+    document.getElementById("gameArea").style.display = "none";
+    document.getElementById("endAreaGood").style.display = "block";
 
-	document.getElementById("headerQ").innerHTML = question[6].headerQ;
-	document.getElementById("content").innerHTML = question[6].content;
-	document.getElementById("op1").innerHTML = question[6].op1;
-	document.getElementById("op2").innerHTML = question[6].op2;
-	document.getElementById("op3").innerHTML = question[6].op3;
-	document.getElementById("op4").innerHTML = question[6].op4;
+    setTimeout(function() {endAreaGood.className = "goodEnd"}, 12200);
 
-	console.log("Question 7 Called", "question.id: ", question.id,  "correct: ", correct);
-	}
-// *****************
-if (question.id == 8) {
-	document.getElementById("op1").className = "selectionFalse";
-	document.getElementById("op2").className = "selectionFalse";
-	document.getElementById("op3").className = "selectionFalse";
-	document.getElementById("op4").className = "selectionFalse";
+    goodEnding++;
 
-	document.getElementById("headerQ").innerHTML = question[7].headerQ;
-	document.getElementById("content").innerHTML = question[7].content;
-	document.getElementById("op1").innerHTML = question[7].op1;
-	document.getElementById("op2").innerHTML = question[7].op2;
-	document.getElementById("op3").innerHTML = question[7].op3;
-	document.getElementById("op4").innerHTML = question[7].op4;
+    if (endMusicG == 0) 
+    {
+      goodMusic();
+    }
 
-	console.log("Question 8 Called", "question.id: ", question.id,  "correct: ", correct);
-	}
-// *****************
-if (question.id == 9) {
-	document.getElementById("op1").className = "selectionFalse";
-	document.getElementById("op2").className = "selectionFalse";
-	document.getElementById("op3").className = "selectionFalse";
-	document.getElementById("op4").className = "selectionFalse";
+    document.getElementById("correctNum").innerHTML = ("Correct: " + correct);
 
-	document.getElementById("headerQ").innerHTML = question[8].headerQ;
-	document.getElementById("content").innerHTML = question[8].content;
-	document.getElementById("op1").innerHTML = question[8].op1;
-	document.getElementById("op2").innerHTML = question[8].op2;
-	document.getElementById("op3").innerHTML = question[8].op3;
-	document.getElementById("op4").innerHTML = question[8].op4;
+    console.log("Ending Reached - Good Ending");
+  }	
 
-	console.log("Question 9 Called", "question.id: ", question.id,  "correct: ", correct);
-	}
-// *****************
-if (question.id == 10) {
-	document.getElementById("op1").className = "selectionFalse";
-	document.getElementById("op2").className = "selectionFalse";
-	document.getElementById("op3").className = "selectionFalse";
-	document.getElementById("op4").className = "selectionFalse";
+  if (question.id == 11 && correct < 7) 
+  {
+    document.getElementById("gameArea").style.display = "none";
+    document.getElementById("endAreaBad").style.display = "block";
 
-	document.getElementById("headerQ").innerHTML = question[9].headerQ;
-	document.getElementById("content").innerHTML = question[9].content;
-	document.getElementById("op1").innerHTML = question[9].op1;
-	document.getElementById("op2").innerHTML = question[9].op2;
-	document.getElementById("op3").innerHTML = question[9].op3;
-	document.getElementById("op4").innerHTML = question[9].op4;
-
-	console.log("Question 10 Called", "question.id: ", question.id,  "correct: ", correct);
-	}
-// *****************
-if (question.id == 11 && correct >= 7) {
-	document.getElementById("gameArea").style.display = "none";
-	document.getElementById("endAreaGood").style.display = "block";
-
-	setTimeout(function() {endAreaGood.className = "goodEnd"}, 12200);
-
-	goodEnding++;
-
-	if (endMusicG == 0) {
-		goodMusic();
-	}
-
-	document.getElementById("correctNum").innerHTML = ("Correct: " + correct);
-
-	console.log("Ending Reached - Good Ending");
-	}	
-
-if (question.id == 11 && correct < 7) {
-	document.getElementById("gameArea").style.display = "none";
-	document.getElementById("endAreaBad").style.display = "block";
-
-	badEnding++;
+    badEnding++;
 		
-	setTimeout(function() {endAreaBad.className = "badEnd"}, 8000);
+    setTimeout(function() {endAreaBad.className = "badEnd"}, 8000);
 
-	if (endMusicB == 0) {
-		badMusic();
-	}
+    if (endMusicB == 0) 
+    {
+      badMusic();
+    }
 
-	document.getElementById("correctNumBad").innerHTML = ("Correct: " + correct);
+    document.getElementById("correctNumBad").innerHTML = ("Correct: " + correct);
 
-	console.log("Ending Reached - Bad Ending");
-}	
+    console.log("Ending Reached - Bad Ending");
+  }	
 }
 
 /**************** submitA() *****************/
@@ -600,58 +611,64 @@ if (question.id == 11 && correct < 7) {
 // to determine whether or not the answer is correct
 // User feedback is provided upon clicking the submit button
 // q#Correct functions play a sound byte respective to the result 
-function submitA() {
+function submitA() 
+{
+  document.getElementById("submitA").disabled = true; 
+  document.getElementById("nextQ").disabled = false;
+  document.getElementById("op1").disabled = true;
+  document.getElementById("op2").disabled = true;
+  document.getElementById("op3").disabled = true;
+  document.getElementById("op4").disabled = true; 
 
-	document.getElementById("submitA").disabled = true; 
-	document.getElementById("nextQ").disabled = false;
-	document.getElementById("op1").disabled = true;
-	document.getElementById("op2").disabled = true;
-	document.getElementById("op3").disabled = true;
-	document.getElementById("op4").disabled = true; 
-// *****************
-	if (question.id == 1 && selected3 == true) {
-		correct++;
-		q1Correct();
-		document.getElementById("headerQ").innerHTML = "Correct"
-		document.getElementById("content").innerHTML = "Lynda initially thinks Myers is Devon Graham. In Halloween Ends, Corey's mom knows a man named Devon that owns a call center."
-	}
+  if (question.id == 1 && selected3 == true) 
+  {
+    correct++;
+    q1Correct();
+    document.getElementById("headerQ").innerHTML = "Correct"
+    document.getElementById("content").innerHTML = "Lynda initially thinks Myers is Devon Graham. In Halloween Ends, Corey's mom knows a man named Devon that owns a call center."
+  }
 
-	if (question.id == 1 && selected1 == true) {
-		wrongSound();
-		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Ben Tramer is Laurie's crush from the original film."
-		op1.className = "selectionWrong";
-	}
+  if (question.id == 1 && selected1 == true) 
+  {
+    wrongSound();
+    document.getElementById("headerQ").innerHTML = "Wrong"
+    document.getElementById("content").innerHTML = "Ben Tramer is Laurie's crush from the original film."
+    op1.className = "selectionWrong";
+  }
 
-	if (question.id == 1 && selected2 == true) {
-		wrongSound();
-		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Tommy Doyle is the boy Laurie babysat and could not drive legally at the time."
-		op2.className = "selectionWrong";
-	}
+  if (question.id == 1 && selected2 == true) 
+  {
+    wrongSound();
+    document.getElementById("headerQ").innerHTML = "Wrong"
+    document.getElementById("content").innerHTML = "Tommy Doyle is the boy Laurie babysat and could not drive legally at the time."
+    op2.className = "selectionWrong";
+  }
 
-	if (question.id == 1 && selected4 == true) {
-		wrongSound();
-		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Tommy Jarvis is a protagonist in the Friday the 13th franchise, appearing in parts 4 - 6."
-		op4.className = "selectionWrong";
-	}
-// *****************
-	if (question.id == 2 && selected1 == true) {
-		correct++;
-		q2Correct();
-		document.getElementById("headerQ").innerHTML = "Correct"
-		document.getElementById("content").innerHTML = "Ted Hollister was hiding in bushes when the mob from Halloween 4 mistook him for Michael and shot him to death.";
-	}
+  if (question.id == 1 && selected4 == true) 
+  {
+    wrongSound();
+    document.getElementById("headerQ").innerHTML = "Wrong"
+    document.getElementById("content").innerHTML = "Tommy Jarvis is a protagonist in the Friday the 13th franchise, appearing in parts 4 - 6."
+    op4.className = "selectionWrong";
+   }
 
-	if (question.id == 2 && selected2 == true) {
-		wrongSound();
-		document.getElementById("headerQ").innerHTML = "Wrong"
-		document.getElementById("content").innerHTML = "Ben Tramer was mistaken for Michael, but was killed by a cop who did not see him crossing the road.";
-		op2.className = "selectionWrong";
-	}
+  if (question.id == 2 && selected1 == true) 
+  {
+    correct++;
+    q2Correct();
+    document.getElementById("headerQ").innerHTML = "Correct"
+    document.getElementById("content").innerHTML = "Ted Hollister was hiding in bushes when the mob from Halloween 4 mistook him for Michael and shot him to death.";
+  }
 
-	if (question.id == 2 && selected3 == true) {
+  if (question.id == 2 && selected2 == true) 
+  {
+    wrongSound();
+    document.getElementById("headerQ").innerHTML = "Wrong"
+    document.getElementById("content").innerHTML = "Ben Tramer was mistaken for Michael, but was killed by a cop who did not see him crossing the road.";
+    op2.className = "selectionWrong";
+  }
+// LEFT OFF HERE FOR CLEAN UP ----------------------------*************************************************************
+  if (question.id == 2 && selected3 == true) {
 		wrongSound();
 		document.getElementById("headerQ").innerHTML = "Wrong"
 		document.getElementById("content").innerHTML = "Corey Cunningham is accused of being like Michael, but is not killed due to being mistaken as him.";
