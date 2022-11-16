@@ -322,7 +322,7 @@ let question = [
     content: "What are Laurie's last words to Michael in Halloween Resurrection?",
     op1: "Happy Halloween, Michael",
     op2: "I'll see you in Hell", // correct
-    op3: "The Price is Wrong, Bitc!",
+    op3: "The Price is Wrong, Bitch!",
     op4: "It's your last Halloween" 
   },
 
