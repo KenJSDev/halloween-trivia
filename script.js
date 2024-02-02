@@ -592,7 +592,7 @@ function nextQ() {
 
     badEnding++;
 		
-    setTimeout(function() {endAreaBad.className = "badEnd"}, 8000);
+    setTimeout(function() {endAreaBad.className = "badEnd"}, 9000);
 
     if (endMusicB == 0) 
     {
