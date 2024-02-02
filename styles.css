@@ -211,7 +211,7 @@ a:visited {
   margin-right: auto; 
   margin-top: 8%;
   margin-bottom: 2%;
-  height: fit-content;
+  height: 60%;
   display: flex;
   flex-wrap: wrap;
 }
@@ -356,27 +356,49 @@ a:visited {
 	background-position: center;
   }
 
+  .questionBox {
+    height: 60%;
+  }
+
+  .questionarea {
+	height: 30%;
+  }
+
   .answerarea {
     width: 90%;
-	height: 50 px;
+	height: 30%;
 	margin-top: 55px;
 	margin-right: auto;
 	margin-left: auto;
 	display: grid;
 	grid-template-columns: auto;
   }
+
+  .answerarea > div {
+	width: 100%;
+  }
+
   .selectionFalse {
+	width: 100%;
 	font-size: 1em;
 	font-weight: bold;
+	text-align: center;
   }
 
   .selectionTrue {
+	width: 100%;
 	font-size: 1em;
 	font-weight: bold;
   }
   
   .selectionWrong {
+	width: 100%;
 	font-size: 1em;
 	font-weight: bold;
+  }
+
+  .submitA {
+	font-weight: bold;
+	width: 90%;
   }
 } 
