@@ -12,7 +12,7 @@
   <div class="titletext"></div>
  
   <!-- Start Menu -->
-    <div id="startArea" class="startscreen" style="display: grid;">
+    <div id="startArea" class="startscreen">
       <button class="jackobutton" id="startbutton" onclick="startGame()">Start</button>
       <button class="jackobutton" id="infobutton" onclick="clickInfo()">Info</button>
     </div>
@@ -22,21 +22,21 @@
       <h2>Halloween Trivia</h2>
         <p sytle="text-align: center;">This application is my first fron-scratch project and it is 
         a submission for a Halloween challenge by W3 Schools. This application is not intended for 
-	publication or moneitization.</p> 
+	      publication or moneitization.</p> 
 
       <h3>Instructions</h3>
       <ul>
-	<li>Score 7 correct answers or higher to get the "Good Ending"</li>
-	<li>Answering more than 3 questions incorrectly will result in the "Bad Ending"</li>
+	      <li>Score 7 correct answers or higher to get the "Good Ending"</li>
+	       <li>Answering more than 3 questions incorrectly will result in the "Bad Ending"</li>
       </ul>
 
       <h3>Thank You</h3>
       <ul> 
-	<li><a href="https://www.w3schools.com" target="_blank">W3 Schools</a> for hosting this challenge and their great learning resources</li>
-	<li><a href="https://www.webdevsimplified.com" target="_blank">Web Dev Simplified</a> for a great structure and community</li>
-	<li><a href="https://www.sololearn.com" target="_blank">SoloLearn</a> for helping me build a good foundation</li> 
-	<li>My friend <a href="https://github.com/ethqnit" target="_blank">Nate</a> for brainstorming functionality and giving recommendations</li>
-	<li><a href="https://github.com/Original-Developer" target="_blank">Rune</a> who offered to collaborate and do some code clean-up via the W3 Schools Discord chat</li>
+	      <li><a href="https://www.w3schools.com" target="_blank">W3 Schools</a> for hosting this challenge and their great learning resources</li>
+	      <li><a href="https://www.webdevsimplified.com" target="_blank">Web Dev Simplified</a> for a great structure and community</li>
+	      <li><a href="https://www.sololearn.com" target="_blank">SoloLearn</a> for helping me build a good foundation</li> 
+	      <li>My friend <a href="https://github.com/ethqnit" target="_blank">Nate</a> for brainstorming functionality and giving recommendations</li>
+	      <li><a href="https://github.com/Original-Developer" target="_blank">Rune</a> who offered to collaborate and do some code clean-up via the W3 Schools Discord chat</li>
       </ul>
 				
       <button onclick="closeInfo()">Back</button>	
@@ -46,15 +46,15 @@
     <div id="gameArea" class="questionbox" style="display: none;">
 		
       <div class="questionarea">
-	<h2 id="headerQ">Question Number</h2>
-	<p id="content">Question Text</p>
+	      <h2 id="headerQ">Question Number</h2>
+	      <p id="content">Question Text</p>
       </div>
 			
       <div class="answerarea">
-	<button id="op1" class="selectionFalse" onclick="select1()">Option 1</button>
-	<button id="op2" class="selectionFalse" onclick="select2()">Option 2</button>
-	<button id="op3" class="selectionFalse" onclick="select3()">Option 3</button>
-	<button id="op4" class="selectionFalse" onclick="select4()">Option 4</button>
+	      <div><button id="op1" class="selectionFalse" onclick="select1()">Option 1</button></div>
+	      <div><button id="op2" class="selectionFalse" onclick="select2()">Option 2</button></div>
+	      <div><button id="op3" class="selectionFalse" onclick="select3()">Option 3</button></div>
+	      <div><button id="op4" class="selectionFalse" onclick="select4()">Option 4</button></div>
       </div>
 			
       <button id="submitA" class="submitA" onClick="submitA()">Submit</button>
@@ -86,7 +86,7 @@
     <div id ="correctNumBad"></div>
   </div>
 			
-  <div style="margin-left: auto; margin-right: auto; width: 30%; margin-top: 10%;">
+  <div style="margin-left: auto; margin-right: auto; margin-top: 10%;">
     <button class="jackobutton" onclick="resetGame()">Reset Game?</button>
   </div>
 		
