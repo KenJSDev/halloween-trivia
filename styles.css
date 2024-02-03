@@ -15,16 +15,6 @@ body {
   height: 97%;
 }
 
-.info {
-  width: 90%;
-  background-color: #000;
-  border: solid 3px orange;
-  border-radius: 25px;
-  margin-left: auto;
-  margin-right: auto; 
-}
-
-
 h2 {
   color: orange;
   text-align: center; 
@@ -368,17 +358,25 @@ a:visited {
 /************* Styles for Mobile **************/
 @media screen and (max-width: 600px) {
   .startScreen {
- 	width: 80%;
+ 	width: 90%;
  	height: 75%;
 	flex-direction: column;
 	justify-content: space-evenly;
   }
 	
 	.gameScreen {
-	width: 80%;
+	width: 90%;
 	height: 75%;
 	flex-direction: column;
 	justify-content: space-evenly;
+  }
+
+  .gameScreen > div {
+	margin: 2px auto;
+  }
+
+  .gameScreen > div > div {
+	margin: 1px;
   }
 
   .jackobutton {
@@ -398,37 +396,17 @@ a:visited {
 	margin-right: auto;
   }
 
-  .startscreenAnimated {
-	width: 80%;
+  .startscreenAnimated, .goodEndAnimated, .goodEnd, .badEndAnimated, .badEnd {
+	width: 90%;
 	height: 75%;
   } 
-
-  .badEndAnimated {
-	width: 80%;
-    height: 75%;
-  } 
-
-  .badEnd {
-	width: 80%;
-    height: 75%;
-  }
-
-  .goodEndAnimated {
-	width: 80%;
-    height: 75%;
-  } 
-
-  .goodEnd {
-	width: 80%;
-    height: 75%;
-  }
 
   .questionarea {
 	height: fit-content;
   }
 
   .answerarea {
-    width: 90%;
+    width: 96%;
 	height: fit-content;
 	margin-top: 55px;
 	margin-right: auto;
