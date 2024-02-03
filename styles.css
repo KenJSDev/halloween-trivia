@@ -195,13 +195,12 @@ a:visited {
   border-radius: 10px;
   margin-left: auto;
   margin-right: auto; 
-  margin-top: 8%;
-  margin-bottom: 2%;
   height: 45%;
   background-image: url("images/endscreen.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  flex-direction: column;
 }
 
 .goodEndAnimated {
@@ -210,13 +209,12 @@ a:visited {
   border-radius: 10px;
   margin-left: auto;
   margin-right: auto; 
-  margin-top: 8%;
-  margin-bottom: 2%;
   height: 45%;
   background-image: url("images/endscreen.gif");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  flex-direction: column;
 }
 
 .badEnd {
@@ -225,13 +223,12 @@ a:visited {
   border-radius: 10px;
   margin-left: auto;
   margin-right: auto; 
-  margin-top: 8%;
-  margin-bottom: 2%;
   height: 45%;
   background-image: url("images/badendscreen.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  flex-direction: column;
 }
 
 .badEndAnimated {
@@ -240,13 +237,12 @@ a:visited {
   border-radius: 10px;
   margin-left: auto;
   margin-right: auto; 
-  margin-top: 8%;
-  margin-bottom: 2%;
   height: 45%;
   background-image: url("images/badendscreen.gif");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  flex-direction: column;
 }
 
 .results {

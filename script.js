@@ -569,7 +569,7 @@ function nextQ() {
   if (question.id == 11 && correct >= 7) 
   {
     document.getElementById("gameScreen").style.display = "none";
-    document.getElementById("endAreaGood").style.display = "block";
+    document.getElementById("endAreaGood").style.display = "flex";
 
     setTimeout(function() {endAreaGood.className = "goodEnd"}, 12200);
 
@@ -588,7 +588,7 @@ function nextQ() {
   if (question.id == 11 && correct < 7) 
   {
     document.getElementById("gameScreen").style.display = "none";
-    document.getElementById("endAreaBad").style.display = "block";
+    document.getElementById("endAreaBad").style.display = "flex";
 
     badEnding++;
 		
