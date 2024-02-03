@@ -2,7 +2,7 @@ html {
   background-image: linear-gradient(#000, #000, #000, #802000, orange);
 }
 
-.main {
+body {
   width: 90%;
   background-image: url("images/myershouse2.png");
   background-repeat: no-repeat;
@@ -12,6 +12,7 @@ html {
   border-radius: 25px;
   margin-left: auto;
   margin-right: auto; 
+  height: 97%;
 }
 
 .info {
@@ -43,19 +44,16 @@ a:visited {
   color: orange;
 }
 
-.titletext {
-  background-image: url("images/halloweentext.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 25%;
+.hallLogo {
+  width: 80%;
+  display: block;
+  margin-left: auto;
   margin-right: auto;
-  margin-left: auto; 
-  width: 30%;
 }
 
 /************* START / REPLAY MENU **************/
 
-.startscreen {
+.startScreen {
   width: 60%;
   border: solid 3px orange;
   border-radius: 10px;
@@ -63,7 +61,7 @@ a:visited {
   margin-right: auto; 
   margin-top: 8%;
   margin-bottom: 2%;
-  min-height: 50%;
+  height: 45%;
   background-image: url("images/startscreen.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -71,6 +69,78 @@ a:visited {
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
+  align-items: center;
+  justify-content: center;
+}
+
+.gameScreen {
+	width: 60%;
+	border: solid 3px orange;
+	border-radius: 10px;
+	margin-left: auto;
+	margin-right: auto; 
+	margin-top: 8%;
+	margin-bottom: 2%;
+	height: 45%;
+	background-image: url("images/startscreen.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	display: flex;
+	flex-wrap: wrap;
+	overflow: hidden;
+	align-items: center;
+	justify-content: center;
+	padding-top: 10px;
+  }
+
+.infoScreen {
+  width: 60%;
+  border: solid 3px orange;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto; 
+  margin-top: 8%;
+  margin-bottom: 2%;
+  height: 45%;
+  background-image: url("images/startscreen.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: none;
+  flex-wrap: wrap;
+  overflow: hidden;
+  justify-content: space-between;
+}
+
+.infoScreen > div {
+  background-color: black;
+  border: 2px solid orange;
+  border-radius: 10px;
+  text-align: center;
+  padding: 5px;
+  width: 90%;
+  height: fit-content;
+}
+
+.endScreen {
+	width: 60%;
+	border: solid 3px orange;
+	border-radius: 10px;
+	margin-left: auto;
+	margin-right: auto; 
+	margin-top: 8%;
+	margin-bottom: 2%;
+	height: 45%;
+	background-image: url("images/startscreen.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	display: flex;
+	flex-wrap: wrap;
+	overflow: hidden;
+	align-items: center;
+	justify-content: center;
 }
 
 .startscreenAnimated {
@@ -81,7 +151,7 @@ a:visited {
 	margin-right: auto; 
 	margin-top: 8%;
 	margin-bottom: 2%;
-	min-height: 50%;
+    height: 45%;
 	background-image: url("images/startscreen.gif");
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -114,11 +184,11 @@ a:visited {
   border-radius: 10px;
   font-size: 2em; 
   color: orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-left: auto;
   margin-right: auto;
-  display: block;
-  margin-top: 35%;
-  margin-bottom: 35%;
 }
 
 .jackobutton:hover {
@@ -137,8 +207,7 @@ a:visited {
   margin-right: auto; 
   margin-top: 8%;
   margin-bottom: 2%;
-  min-height: 50%;
-  max-height: 50%;
+  height: 45%;
   background-image: url("images/endscreen.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -153,8 +222,7 @@ a:visited {
   margin-right: auto; 
   margin-top: 8%;
   margin-bottom: 2%;
-  min-height: 50%;
-  max-height: 50%;
+  height: 45%;
   background-image: url("images/endscreen.gif");
   background-size: cover;
   background-repeat: no-repeat;
@@ -169,8 +237,7 @@ a:visited {
   margin-right: auto; 
   margin-top: 8%;
   margin-bottom: 2%;
-  min-height: 50%;
-  max-height: 50%;
+  height: 45%;
   background-image: url("images/badendscreen.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -185,8 +252,7 @@ a:visited {
   margin-right: auto; 
   margin-top: 8%;
   margin-bottom: 2%;
-  min-height: 50%;
-  max-height: 50%;
+  height: 45%;
   background-image: url("images/badendscreen.gif");
   background-size: cover;
   background-repeat: no-repeat;
@@ -202,19 +268,6 @@ a:visited {
 }
 
 /************* QUESTION AREA **************/
-.questionBox {
-  width: 60%;
-  background-color: #000;
-  border: solid 2px orange;
-  border-radius: 10px;
-  margin-left: auto;
-  margin-right: auto; 
-  margin-top: 8%;
-  margin-bottom: 2%;
-  height: 60%;
-  display: flex;
-  flex-wrap: wrap;
-}
 
 .questionarea {
   color: #FFF;
@@ -222,6 +275,9 @@ a:visited {
   text-align: center;
   margin-right: auto;
   margin-left: auto;
+  background-color: black;
+  border: 2px solid orange;
+  border-radius: 15px;
 }
 
 .answerarea {
@@ -246,10 +302,14 @@ a:visited {
   font-size: 1.5em;
   color: black;
   height: 100%;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 2px;
 }
 
 .selectionFalse:hover {
-  background-image: linear-gradient(#802000, orange);	
+  background-image: linear-gradient(orange, #802000);	
   color: white;
 }
 
@@ -260,6 +320,10 @@ a:visited {
   font-size: 1.5em;
   color: white;
   height: 100%;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 2px;
 }
 
 .selectionWrong {
@@ -269,6 +333,10 @@ a:visited {
   font-size: 1.5em;
   color: white;
   height: 100%;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 2px;
 }
 
 .submitA {
@@ -280,6 +348,8 @@ a:visited {
 	height: 25px;
 	margin-top: 10px;
 	margin-bottom: 5px;
+	border: 2px solid black;
+	border-radius: 10px;
 	}
 
 .nextQ {
@@ -291,87 +361,81 @@ a:visited {
 	height: 25px;
 	margin-top: 10px;
 	margin-bottom: 5px;
+	border: 2px solid black;
+	border-radius: 10px;
 	}
 
 /************* Styles for Mobile **************/
-@media screen and (max-width: 900px) {
-  .startscreen {
-    width: 60%;
-	border: solid 3px orange;
-	border-radius: 10px;
-	margin-left: auto;
-	margin-right: auto; 	
-	margin-top: 8%;
-	margin-bottom: 2%;
-	min-height: 50%;
-	background-image: url("images/startscreen.png");
-	background-size: cover;
-	background-repeat: no-repeat;
-	align-content: center;
+@media screen and (max-width: 600px) {
+  .startScreen {
+ 	width: 80%;
+ 	height: 75%;
+	flex-direction: column;
+	justify-content: space-evenly;
+  }
+	
+	.gameScreen {
+	width: 80%;
+	height: 75%;
+	flex-direction: column;
+	justify-content: space-evenly;
   }
 
   .jackobutton {
 	background-image: url("images/jackobutton.png");
 	background-repeat: no-repeat; 
 	background-size: cover;
-	width: 80%; 
-	border: 2px solid orange; 
+	width: 50%;
+	height: 65px;
+	border: 2px solid orange;
 	border-radius: 10px;
-	font-size: 1em;
+	font-size: 1.5em; 
 	color: orange;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	margin-left: auto;
 	margin-right: auto;
-	display: block;
-	margin-top: 5%;
-	margin-bottom: 5%;
   }
 
-  .endscreenAnimated {
-    width: 60%;
-	border: solid 2px orange;
-	border-radius: 10px;
-	margin-left: auto;
-	margin-right: auto; 
-	margin-top: 8%;
-	margin-bottom: 2%;
-	min-height: 50%;
-	background-image: url("images/endscreen.gif");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center; 
+  .startscreenAnimated {
+	width: 80%;
+	height: 75%;
   } 
 
-  .endscreen {
-	width: 60%;
-	border: solid 2px orange;
-	border-radius: 10px;
-	margin-left: auto;
-	margin-right: auto; 
-	margin-top: 8%;
-	margin-bottom: 2%;
-	min-height: 50%;
-	background-image: url("images/endscreen.png");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
+  .badEndAnimated {
+	width: 80%;
+    height: 75%;
+  } 
+
+  .badEnd {
+	width: 80%;
+    height: 75%;
   }
 
-  .questionBox {
-    height: 60%;
+  .goodEndAnimated {
+	width: 80%;
+    height: 75%;
+  } 
+
+  .goodEnd {
+	width: 80%;
+    height: 75%;
   }
 
   .questionarea {
-	height: 30%;
+	height: fit-content;
   }
 
   .answerarea {
     width: 90%;
-	height: 30%;
+	height: fit-content;
 	margin-top: 55px;
 	margin-right: auto;
 	margin-left: auto;
-	display: grid;
-	grid-template-columns: auto;
+	display: flex;
+    flex-wrap: wrap;
+	justify-content: space-between;
   }
 
   .answerarea > div {
@@ -379,20 +443,23 @@ a:visited {
   }
 
   .selectionFalse {
-	width: 100%;
+	height: fit-content;
 	font-size: 1em;
 	font-weight: bold;
 	text-align: center;
+	overflow: hidden;
+	white-space: no-wrap;
+	text-overflow: ellipsis;
   }
 
   .selectionTrue {
-	width: 100%;
+	height: fit-content;
 	font-size: 1em;
 	font-weight: bold;
   }
   
   .selectionWrong {
-	width: 100%;
+	height: fit-content;
 	font-size: 1em;
 	font-weight: bold;
   }
@@ -400,5 +467,7 @@ a:visited {
   .submitA {
 	font-weight: bold;
 	width: 90%;
+	margin-bottom: 5px;
+	margin-top: 0px;
   }
 } 

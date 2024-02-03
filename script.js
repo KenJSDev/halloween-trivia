@@ -123,20 +123,20 @@ function q10Correct()
 // The Close button will take the user back to the start screen
 function clickInfo () 
 {
-  document.getElementById("startArea").style.display = "none";
-  document.getElementById("infoArea").style.display = "block";
+  document.getElementById("startScreen").style.display = "none";
+  document.getElementById("infoScreen").style.display = "flex";
 
   console.log("Info Button: Clicked");
-  console.log(infoArea.style.display);
+  console.log(infoScreen.style.display);
 }	
 
 function closeInfo() 
 {
-  document.getElementById("startArea").style.display = "grid";
-  document.getElementById("infoArea").style.display = "none";
+  document.getElementById("startScreen").style.display = "flex";
+  document.getElementById("infoScreen").style.display = "none";
 
   console.log("Back Button: Clicked");
-  console.log(infoArea.style.display);
+  console.log(infoScreen.style.display);
 }
 
 /**************** Start Game *****************/
@@ -146,9 +146,9 @@ function startGame()
 {
   if (animation == 0) 
   {
-  startArea.className = "startscreenAnimated";
-  setTimeout(function() { gameArea.style.display = "block"}, 10000);
-  setTimeout(function() { startArea.style.display = "none"}, 10000);
+  startScreen.className = "startscreenAnimated";
+  setTimeout(function() { gameScreen.style.display = "block"}, 10000);
+  setTimeout(function() { startScreen.style.display = "none"}, 10000);
   document.getElementById("startbutton").style.display = "none";
   document.getElementById("infobutton").style.display = "none";
   playMusic();
@@ -156,8 +156,8 @@ function startGame()
 
   else 
   {
-    document.getElementById("startArea").style.display = "none";
-    document.getElementById("gameArea").style.display = "block";
+    document.getElementById("startScreen").style.display = "none";
+    document.getElementById("gameScreen").style.display = "block";
     document.getElementById("startbutton").style.display = "none";
     document.getElementById("infobutton").style.display = "none";
   }
@@ -189,10 +189,10 @@ function resetGame()
   document.getElementById("op4").className = "selectionFalse";
 
   // Hide the endArea
-  startArea.className = "startscreen";
-  document.getElementById("startbutton").style.display = "block";
-  document.getElementById("infobutton").style.display = "block";
-  document.getElementById("startArea").style.display = "grid";
+  startScreen.className = "startscreen";
+  document.getElementById("startbutton").style.display = "flex";
+  document.getElementById("infobutton").style.display = "flex";
+  document.getElementById("startScreen").style.display = "flex";
   document.getElementById("endAreaGood").style.display = "none";
   document.getElementById("endAreaBad").style.display = "none";
 		
@@ -568,7 +568,7 @@ function nextQ() {
 
   if (question.id == 11 && correct >= 7) 
   {
-    document.getElementById("gameArea").style.display = "none";
+    document.getElementById("gameScreen").style.display = "none";
     document.getElementById("endAreaGood").style.display = "block";
 
     setTimeout(function() {endAreaGood.className = "goodEnd"}, 12200);
@@ -587,7 +587,7 @@ function nextQ() {
 
   if (question.id == 11 && correct < 7) 
   {
-    document.getElementById("gameArea").style.display = "none";
+    document.getElementById("gameScreen").style.display = "none";
     document.getElementById("endAreaBad").style.display = "block";
 
     badEnding++;

@@ -7,30 +7,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 	
-  <body class="main">
+  <body>
 
-  <div class="titletext"></div>
+    <img src="images/halloweentext.png" class="hallLogo" />
  
   <!-- Start Menu -->
-    <div id="startArea" class="startscreen">
-      <button class="jackobutton" id="startbutton" onclick="startGame()">Start</button>
-      <button class="jackobutton" id="infobutton" onclick="clickInfo()">Info</button>
+    <div id="startScreen" class="startScreen">
+      <div class="jackobutton" id="startbutton" onclick="startGame()">Start</button></div>
+      <div class="jackobutton" id="infobutton" onclick="clickInfo()">Info</button></div>
     </div>
 	
   <!-- Info Area -->
-    <div id="infoArea" class="infoScreen" style="display: none;">
-      <h2>Halloween Trivia</h2>
-      <h3>Instructions</h3>
-      <ul>
-	      <li>Score 7 correct answers or higher to get the "Good Ending"</li>
-	       <li>Answering more than 3 questions incorrectly will result in the "Bad Ending"</li>
-      </ul>
+    <div id="infoScreen" class="infoScreen">
+      <div>
+        <h2>Halloween Trivia</h2> 
+      </div>
+      <div>
+        <h3>Instructions</h3>
+        <p>Score 7 correct answers or higher to get the "Good Ending"</p>
+        <p>Answering more than 3 questions incorrectly will result in the "Bad Ending"</p>
+      </div>
 				
       <button onclick="closeInfo()">Back</button>	
     </div>
 
   <!-- Question Selection -->
-    <div id="gameArea" class="questionbox" style="display: none;">
+    <div id="gameScreen" class="gameScreen" style="display: none;">
 		
       <div class="questionarea">
 	      <h2 id="headerQ">Question Number</h2>
@@ -38,14 +40,16 @@
       </div>
 			
       <div class="answerarea">
-	      <div><button id="op1" class="selectionFalse" onclick="select1()">Option 1</button></div>
-	      <div><button id="op2" class="selectionFalse" onclick="select2()">Option 2</button></div>
-	      <div><button id="op3" class="selectionFalse" onclick="select3()">Option 3</button></div>
-	      <div><button id="op4" class="selectionFalse" onclick="select4()">Option 4</button></div>
+	      <div id="op1" class="selectionFalse" onclick="select1()">Option 1</div>
+	      <div id="op2" class="selectionFalse" onclick="select2()">Option 2</div>
+	      <div id="op3" class="selectionFalse" onclick="select3()">Option 3</div>
+	      <div id="op4" class="selectionFalse" onclick="select4()">Option 4</div>
       </div>
 			
-      <button id="submitA" class="submitA" onClick="submitA()">Submit</button>
-      <button id="nextQ" class="nextQ" onClick="nextQ()">Next</button>
+      <div class="submitArea">
+        <button id="submitA" class="submitA" onClick="submitA()">Submit</button>
+        <button id="nextQ" class="nextQ" onClick="nextQ()">Next</button>
+      </div>
 						
     </div>
 		
@@ -54,15 +58,15 @@
 		
     <h2>Results</h2>
 			
-    <div id="results" class="results">
-      <div id ="correctNum"></div>
-    </div>
+      <div id="results" class="results">
+        <div id ="correctNum"></div>
+      </div>
 
-    <div style="margin-left: auto; margin-right: auto; width: 30%; margin-top: 90%;">
-      <button class="jackobutton" onclick="resetGame()">Reset Game?</button>
-    </div>
+      <div style="margin-left: auto; margin-right: auto; width: 30%; margin-top: 90%;">
+        <button class="jackobutton" onclick="resetGame()">Reset Game?</button>
+      </div>
 		
-  </div>
+    </div>
 	  
   <!-- Bad Ending Screen -->
   <div id="endAreaBad" class="badEndAnimated" style="display: none;">
