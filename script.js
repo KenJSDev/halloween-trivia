@@ -118,6 +118,8 @@ function q10Correct()
   console.log("q10Correct called - Hacksaw Not Jim Duggan")
 } 
 
+
+
 /**************** Display Info *****************/
 // The Info button will display information relevant to the game
 // The Close button will take the user back to the start screen
