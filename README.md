@@ -1,7 +1,15 @@
 # Halloween Trivia
-I created this project in October of 2022 as part of a W3 Schools challenge which they promoted on Discord. This was my first completed project and it won second place. I was awarded 2 free courses on the platform.
+This project was created as an entry into the W3 Schools Halloween Coding Challenge in 2022. I won second place. 
+
+### Languages / Protocols / Tools
+- HTML, CSS, JavaScript
+- Visual Studio Code, Git Hub
 
 ### Project Details
-- I didn't have a specific focus other than to do the best that I could to win the coding challenge
-- I focused a lot on Grid view at the time, but will begin converting the application to flex box to enhance the mobile experience
-- This project will continually be improved as I increase my knowledge and skillset 
+- The initial build of this project focused heavily on media. I knew it was going to be a short trivia game that didn't have a lot of replay value. So I wanted to build something that users would play through only once or twice but have a good time doing so.
+- To accomplish the above, I created a "good ending" and "bad ending" complete with a gif and sound queues. I also added a feedback system that provides immediate feedback, context, and audible confirmations.
+
+## Focus Moving Forward
+- Detect and resolve bugs
+- Improve stability
+- Enhnace the overall user experience
